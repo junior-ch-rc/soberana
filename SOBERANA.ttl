@@ -1,0 +1,858 @@
+@prefix : <http://soberana.com#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://soberana.com> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:Participant rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Participant"@en.
+:Resource rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Resource"@en.
+:DataExchange rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "DataExchange"@en.
+:RoleAssignment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "RoleAssignment"@en.
+:Data rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Data"@en.
+:DataOwner rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "DataOwner"@en.
+:DataProvider rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "DataProvider"@en.
+:DataConsumer rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "DataConsumer"@en.
+:DataUser rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "DataUser"@en.
+:IntermediaryParticipant rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "IntermediaryParticipant"@en.
+:BrokerServiceProvider rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "BrokerServiceProvider"@en.
+:EvaluationFacility rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "EvaluationFacility"@en.
+:Manipulation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Manipulation"@en.
+:Ownership rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Ownership"@en.
+:DataUsagePolicy rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "DataUsagePolicy"@en.
+:Certificate rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Certificate"@en.
+:CertificationBody rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "CertificationBody"@en.
+:CoreParticipant rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "CoreParticipant"@en.
+:DataSovereigntyAct rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "DataSovereigntyAct"@en.
+:Connector rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Connector"@en.
+:InvokeDataOperation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "InvokeDataOperation"@en.
+:DataOperation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "DataOperation"@en.
+:EvaluationReport rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "EvaluationReport"@en.
+:Metadata rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Metadata"@en.
+:MetadataAssignment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "MetadataAssignment"@en.
+:Activity rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Activity"@en.
+:EvaluationAct rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "EvaluationAct"@en.
+:CertificationAct rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "CertificationAct"@en.
+:Evaluation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Evaluation"@en.
+:Certification rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Certification"@en.
+:Authorization rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Authorization"@en.
+:DataUsageAct rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "DataUsageAct"@en.
+:Evaluated rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Evaluated"@en.
+:Offer rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Offer"@en.
+:EconomicOffering rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "EconomicOffering"@en.
+:ConditionalCommitment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "ConditionalCommitment"@en.
+:ConditionalClaim rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "ConditionalClaim"@en.
+:MetadataRetrival rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "MetadataRetrival"@en.
+:EconomicAgreement rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "EconomicAgreement"@en.
+:OfferorUnconditionalAgreement rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "OfferorUnconditionalAgreement"@en.
+:OffereeUnconditionalAgreement rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "OffereeUnconditionalAgreement"@en.
+:DigitalAsset rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "DigitalAsset"@en.
+:Counterpart rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Counterpart"@en.
+:OfferedContributionType rdf:type owl:NamedIndividual;
+    rdfs:subClassOf gufo:ConcreteIndividualType;
+    rdfs:label "OfferedContributionType"@en.
+:CounterpartContributionType rdf:type owl:NamedIndividual;
+    rdfs:subClassOf gufo:ConcreteIndividualType;
+    rdfs:label "CounterpartContributionType"@en.
+:OfferedContribution rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "OfferedContribution"@en.
+:CounterpartContribution rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "CounterpartContribution"@en.
+:Data rdfs:subClassOf :Resource.
+:IntermediaryParticipant rdfs:subClassOf :Participant.
+:DataUsagePolicy rdfs:subClassOf :Resource.
+:DataOwner rdfs:subClassOf :CoreParticipant.
+:DataProvider rdfs:subClassOf :CoreParticipant.
+:DataConsumer rdfs:subClassOf :CoreParticipant.
+:DataUser rdfs:subClassOf :CoreParticipant.
+:CoreParticipant rdfs:subClassOf :Participant.
+:BrokerServiceProvider rdfs:subClassOf :IntermediaryParticipant.
+:CertificationBody rdfs:subClassOf :IntermediaryParticipant.
+:EvaluationFacility rdfs:subClassOf :IntermediaryParticipant.
+:Certificate rdfs:subClassOf :Resource.
+:Connector rdfs:subClassOf :Resource.
+:EvaluationReport rdfs:subClassOf :Resource.
+:Metadata rdfs:subClassOf :Resource.
+:DataOperation rdfs:subClassOf :Activity.
+:Evaluation rdfs:subClassOf :Activity.
+:Certification rdfs:subClassOf :Activity.
+:Connector rdfs:subClassOf :Evaluated.
+:CoreParticipant rdfs:subClassOf :Evaluated.
+:BrokerServiceProvider rdfs:subClassOf :Evaluated.
+:owns rdf:type owl:ObjectProperty;
+    rdfs:domain :Data;
+    rdfs:range :DataOwner;
+    rdfs:label "owns"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:isAttached rdf:type owl:ObjectProperty;
+    rdfs:domain :DataUsagePolicy;
+    rdfs:range :Data;
+    rdfs:label "isAttached"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:enforces rdf:type owl:ObjectProperty;
+    rdfs:domain :Connector;
+    rdfs:range :DataUsagePolicy;
+    rdfs:label "enforces"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:publishes rdf:type owl:ObjectProperty;
+    rdfs:domain :DataOwner;
+    rdfs:range :Metadata;
+    rdfs:label "publishes"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:publishedOn rdf:type owl:ObjectProperty;
+    rdfs:domain :Metadata;
+    rdfs:range :BrokerServiceProvider;
+    rdfs:label "publishedOn"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:manipulates rdf:type owl:ObjectProperty;
+    rdfs:domain :Activity;
+    rdfs:range :Resource;
+    rdfs:label "manipulates"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:perfoms rdf:type owl:ObjectProperty;
+    rdfs:domain :Participant;
+    rdfs:range :Activity;
+    rdfs:label "perfoms"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:emits rdf:type owl:ObjectProperty;
+    rdfs:domain :EvaluationFacility;
+    rdfs:range :EvaluationReport;
+    rdfs:label "emits"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:emits_1 rdf:type owl:ObjectProperty;
+    rdfs:domain :CertificationBody;
+    rdfs:range :Certificate;
+    rdfs:label "emits"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:calls rdf:type owl:ObjectProperty;
+    rdfs:domain :DataUser;
+    rdfs:range :DataOperation;
+    rdfs:label "calls"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:creates rdf:type owl:ObjectProperty;
+    rdfs:domain :DataOwner;
+    rdfs:range :DataUsagePolicy;
+    rdfs:label "creates"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:authorize rdf:type owl:ObjectProperty;
+    rdfs:domain :DataOwner;
+    rdfs:range :DataProvider;
+    rdfs:label "authorize"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:usesData rdf:type owl:ObjectProperty;
+    rdfs:domain :DataUser;
+    rdfs:range :DataConsumer;
+    rdfs:label "usesData"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:controls rdf:type owl:ObjectProperty;
+    rdfs:domain :DataOwner;
+    rdfs:range :Data;
+    rdfs:label "controls"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:certifies rdf:type owl:ObjectProperty;
+    rdfs:domain :Certificate;
+    rdfs:range :Evaluated;
+    rdfs:label "certifies"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:evaluates rdf:type owl:ObjectProperty;
+    rdfs:domain :EvaluationReport;
+    rdfs:range :Evaluated;
+    rdfs:label "evaluates"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:retrives rdf:type owl:ObjectProperty;
+    rdfs:domain :DataUser;
+    rdfs:range :Metadata;
+    rdfs:label "retrives"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:OfferedContribution gufo:categorizes :OfferedContributionType.
+:CounterpartContributionType gufo:categorizes :CounterpartContribution.
+:DataExchange rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger;
+  owl:onClass :Participant
+].
+:RoleAssignment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :Participant
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Activity
+].
+:DataExchange rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :Resource
+].
+:Resource rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :DataExchange
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Manipulation
+].
+:Manipulation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :Resource
+].
+:Activity rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :Manipulation
+].
+:Manipulation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Activity
+].
+:Data rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Ownership
+].
+:Ownership rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :Data
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :Ownership
+].
+:Ownership rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataExchange rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :DataOwner
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :DataProvider
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :DataConsumer
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :DataUser
+].
+:DataUsagePolicy rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :DataSovereigntyAct
+].
+:DataSovereigntyAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :DataUsagePolicy
+].
+:Certificate rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:historicallyDependsOn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUsagePolicy
+].
+:DataUsagePolicy rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:historicallyDependsOn;
+  owl:someValuesFrom :Certificate
+].
+:Data rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :InvokeDataOperation
+].
+:InvokeDataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :Data
+].
+:DataUsagePolicy rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :InvokeDataOperation
+].
+:InvokeDataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUsagePolicy
+].
+:Connector rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :InvokeDataOperation
+].
+:InvokeDataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Connector
+].
+:Data rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :Metadata
+].
+:Metadata rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Data
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MetadataAssignment
+].
+:MetadataAssignment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Metadata
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :MetadataAssignment
+].
+:MetadataAssignment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:BrokerServiceProvider rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :MetadataAssignment
+].
+:MetadataAssignment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :BrokerServiceProvider
+].
+:EvaluationReport rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :EvaluationAct
+].
+:EvaluationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :EvaluationReport
+].
+:EvaluationFacility rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :EvaluationAct
+].
+:EvaluationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :EvaluationFacility
+].
+:Certificate rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:historicallyDependsOn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :CertificationAct
+].
+:CertificationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:historicallyDependsOn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Certificate
+].
+:CertificationBody rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :CertificationAct
+].
+:CertificationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :CertificationBody
+].
+:Certificate rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :CertificationAct
+].
+:CertificationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Certificate
+].
+:Evaluation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :EvaluationAct
+].
+:EvaluationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Evaluation
+].
+:Certification rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :CertificationAct
+].
+:CertificationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Certification
+].
+:DataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :InvokeDataOperation
+].
+:InvokeDataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOperation
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :InvokeDataOperation
+].
+:InvokeDataOperation rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:Activity rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :DataExchange
+].
+:DataExchange rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :Activity
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :DataSovereigntyAct
+].
+:DataSovereigntyAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :Authorization
+].
+:Authorization rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataProvider rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :Authorization
+].
+:Authorization rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataProvider
+].
+:DataConsumer rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :DataUsageAct
+].
+:DataUsageAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataConsumer
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :DataUsageAct
+].
+:DataUsageAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:Data rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :DataSovereigntyAct
+].
+:DataSovereigntyAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :Data
+].
+:Evaluated rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :CertificationAct
+].
+:CertificationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Evaluated
+].
+:Evaluated rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :EvaluationAct
+].
+:EvaluationAct rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Evaluated
+].
+:EconomicOffering rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:wasCreatedIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Offer
+].
+:Offer rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:wasCreatedIn;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :EconomicOffering
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :Offer
+].
+:Offer rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :Offer
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :EconomicOffering
+].
+:EconomicOffering rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :EconomicOffering
+].
+:EconomicOffering rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:ConditionalCommitment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :MetadataAssignment
+].
+:MetadataAssignment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :ConditionalCommitment
+].
+:Metadata rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MetadataRetrival
+].
+:MetadataRetrival rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Metadata
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :MetadataRetrival
+].
+:MetadataRetrival rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:BrokerServiceProvider rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :MetadataRetrival
+].
+:MetadataRetrival rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :BrokerServiceProvider
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :ConditionalClaim
+].
+:ConditionalClaim rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MetadataRetrival
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :ConditionalClaim
+].
+:ConditionalCommitment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :ConditionalCommitment
+].
+:EconomicAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:historicallyDependsOn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :EconomicOffering
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :OffereeUnconditionalAgreement
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :OfferorUnconditionalAgreement
+].
+:DigitalAsset rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :OfferorUnconditionalAgreement
+].
+:OfferorUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DigitalAsset
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :OfferorUnconditionalAgreement
+].
+:OfferorUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:OffereeUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :Counterpart
+].
+:Counterpart rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :OffereeUnconditionalAgreement
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :OffereeUnconditionalAgreement
+].
+:OffereeUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:OfferorUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :OfferedContributionType
+].
+:OffereeUnconditionalAgreement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:someValuesFrom :CounterpartContributionType
+].
+:OfferedContribution rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:CounterpartContribution rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
+:DataOwner rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :ConditionalCommitment
+].
+:ConditionalCommitment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataOwner
+].
+:DataUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :ConditionalClaim
+].
+:ConditionalClaim rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :DataUser
+].
