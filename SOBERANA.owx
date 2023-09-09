@@ -13,6 +13,40 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="gufo" IRI="http://purl.org/nemo/gufo#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>An ontology for describing an International Data Spaces Ecosystem from three different perspectives: Sovereignty, Legitimacy and Economic. Soberana is based on OntoUML/UFO concepts.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Category"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:EventType"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Kind"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Relator"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Role"/>
+    </Declaration>
     <Declaration>
         <Class IRI="#Activity"/>
     </Declaration>
@@ -47,10 +81,16 @@
         <Class IRI="#CoreParticipant"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CoreParticipants"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Counterpart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CounterpartContribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CounterpartContributionType"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Data"/>
@@ -92,9 +132,6 @@
         <Class IRI="#EconomicOffering"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Evaluated"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Evaluation"/>
     </Declaration>
     <Declaration>
@@ -131,6 +168,9 @@
         <Class IRI="#OfferedContribution"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OfferedContributionType"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OffereeUnconditionalAgreement"/>
     </Declaration>
     <Declaration>
@@ -149,28 +189,73 @@
         <Class IRI="#RoleAssignment"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#authorize"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorized"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#called"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#calls"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#certified"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#certifies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#componentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#composedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controlled"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#controls"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#created"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#creates"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#emits"/>
+        <ObjectProperty IRI="#emitsCertificate"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#emits_1"/>
+        <ObjectProperty IRI="#emitsReport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enforced"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#enforces"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#evaluated"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#evaluates"/>
@@ -179,10 +264,16 @@
         <ObjectProperty IRI="#isAttached"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#manipulated"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#manipulates"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#owns"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#perfomed"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#perfoms"/>
@@ -341,116 +432,318 @@
         <NamedIndividual IRI="#RoleAssignment"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#perfoms"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owns"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
+        <NamedIndividual IRI="#authorize"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#calls"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#certifies"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#controls"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:Kind"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:Event"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#publishes"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:Role"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="gufo:categorizes"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#creates"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CounterpartContributionType"/>
+        <NamedIndividual IRI="#emitsCertificate"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#emits_1"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:Category"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#authorize"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#manipulates"/>
+        <NamedIndividual IRI="#emitsReport"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#enforces"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#evaluates"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#isAttached"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#evaluates"/>
+        <NamedIndividual IRI="#manipulates"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owns"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#perfoms"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#publishedOn"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#publishes"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#retrives"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OfferedContributionType"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#certifies"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#emits"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#usesData"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="gufo:EventType"/>
+        <AnnotationProperty abbreviatedIRI="gufo:categorizes"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#CertificationAct"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Relator"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#EvaluationReport"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Certificate"/>
+                    <Class IRI="#CertificationBody"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#BrokerServiceProvider"/>
+                        <Class IRI="#Connector"/>
+                        <Class IRI="#CoreParticipant"/>
+                    </ObjectUnionOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Certificate"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#CertificationBody"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <ObjectUnionOf>
+                    <Class IRI="#BrokerServiceProvider"/>
+                    <Class IRI="#Connector"/>
+                    <Class IRI="#CoreParticipant"/>
+                </ObjectUnionOf>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                </ObjectInverseOf>
+                <Class IRI="#Certification"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#EvaluationReport"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DataExchange"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Event"/>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#Activity"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#Resource"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataConsumer"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataOwner"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataProvider"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataUser"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="4">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#Participant"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EconomicAgreement"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Relator"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#composedBy"/>
+                    <Class IRI="#OffereeUnconditionalAgreement"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#composedBy"/>
+                    <Class IRI="#OfferorUnconditionalAgreement"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#EconomicOffering"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#composedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#OffereeUnconditionalAgreement"/>
+                    <Class IRI="#OfferorUnconditionalAgreement"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#EconomicOffering"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EconomicOffering"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Relator"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#composedBy"/>
+                    <Class IRI="#ConditionalClaim"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#composedBy"/>
+                    <Class IRI="#ConditionalCommitment"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <ObjectUnionOf>
+                    <Class IRI="#DataOwner"/>
+                    <Class IRI="#DataUser"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+                <Class IRI="#Offer"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#composedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ConditionalClaim"/>
+                    <Class IRI="#ConditionalCommitment"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#DataOwner"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#DataUser"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+                <Class IRI="#Offer"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Manipulation"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Relator"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Resource"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Activity"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Offer"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Event"/>
+            <ObjectIntersectionOf>
+                <ObjectAllValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                    </ObjectInverseOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#DataOwner"/>
+                        <Class IRI="#DataUser"/>
+                    </ObjectUnionOf>
+                </ObjectAllValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+                    </ObjectInverseOf>
+                    <Class IRI="#EconomicOffering"/>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataOwner"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataUser"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+                </ObjectInverseOf>
+                <Class IRI="#EconomicOffering"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RoleAssignment"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Relator"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Participant"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Activity"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Activity"/>
         <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            <Class IRI="#DataExchange"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manipulates"/>
+            <Class IRI="#Resource"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Activity"/>
@@ -465,10 +758,17 @@
         <Class IRI="#Activity"/>
         <ObjectSomeValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
             </ObjectInverseOf>
-            <Class IRI="#DataExchange"/>
+            <Class IRI="#RoleAssignment"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#manipulates"/>
+            <Class IRI="#Resource"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Authorization"/>
@@ -490,10 +790,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BrokerServiceProvider"/>
-        <Class IRI="#Evaluated"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BrokerServiceProvider"/>
         <Class IRI="#IntermediaryParticipant"/>
     </SubClassOf>
     <SubClassOf>
@@ -513,6 +809,18 @@
             </ObjectInverseOf>
             <Class IRI="#MetadataRetrival"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrokerServiceProvider"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            </ObjectInverseOf>
+            <ObjectUnionOf>
+                <Class IRI="#MetadataAssignment"/>
+                <Class IRI="#MetadataRetrival"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Certificate"/>
@@ -528,78 +836,33 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Certificate"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            </ObjectInverseOf>
-            <Class IRI="#CertificationAct"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Certificate"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            </ObjectInverseOf>
-            <Class IRI="#DataUsagePolicy"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Certification"/>
         <Class IRI="#Activity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Certification"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#CertificationAct"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Certification"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            </ObjectInverseOf>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
             <Class IRI="#CertificationAct"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#Certificate"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#Certification"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Certificate"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#CertificationBody"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CertificationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Evaluated"/>
-        </ObjectMinCardinality>
+        <Class IRI="#CertificationBody"/>
+        <Class IRI="#IntermediaryParticipant"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CertificationBody"/>
-        <Class IRI="#IntermediaryParticipant"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#emitsCertificate"/>
+            <Class IRI="#Certificate"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CertificationBody"/>
@@ -616,17 +879,40 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalClaim"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#DataUser"/>
-        </ObjectMinCardinality>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <Class IRI="#DataUser"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataOwner"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                </ObjectInverseOf>
+                <Class IRI="#MetadataRetrival"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalClaim"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
             <Class IRI="#MetadataRetrival"/>
         </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalClaim"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class IRI="#DataUser"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalClaim"/>
@@ -643,19 +929,40 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalCommitment"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <Class IRI="#DataOwner"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                </ObjectInverseOf>
+                <Class IRI="#DataUser"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                </ObjectInverseOf>
+                <Class IRI="#MetadataAssignment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalCommitment"/>
         <ObjectSomeValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
             </ObjectInverseOf>
             <Class IRI="#MetadataAssignment"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalCommitment"/>
-        <ObjectMinCardinality cardinality="1">
+        <ObjectExactCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
             <Class IRI="#DataOwner"/>
-        </ObjectMinCardinality>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConditionalCommitment"/>
@@ -665,10 +972,6 @@
             </ObjectInverseOf>
             <Class IRI="#DataUser"/>
         </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Connector"/>
-        <Class IRI="#Evaluated"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Connector"/>
@@ -684,8 +987,20 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CoreParticipant"/>
-        <Class IRI="#Evaluated"/>
+        <Class IRI="#Connector"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            </ObjectInverseOf>
+            <Class IRI="#InvokeDataOperation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Connector"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#enforces"/>
+            <Class IRI="#DataUsagePolicy"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CoreParticipant"/>
@@ -693,18 +1008,29 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Counterpart"/>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+        <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Counterpart"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
             <Class IRI="#OffereeUnconditionalAgreement"/>
-        </ObjectMinCardinality>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CounterpartContribution"/>
         <Class abbreviatedIRI="gufo:Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CounterpartContribution"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#DataUser"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CounterpartContribution"/>
@@ -773,69 +1099,17 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <Class abbreviatedIRI="gufo:Event"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            <Class IRI="#Activity"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
+        <Class IRI="#DataConsumer"/>
+        <ObjectAllValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
             </ObjectInverseOf>
-            <Class IRI="#DataConsumer"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#DataOwner"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#DataProvider"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#DataUser"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#Resource"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataExchange"/>
-        <ObjectMinCardinality cardinality="4">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#Participant"/>
-        </ObjectMinCardinality>
+            <ObjectUnionOf>
+                <Class IRI="#CertificationAct"/>
+                <Class IRI="#DataUsageAct"/>
+                <Class IRI="#EvaluationAct"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DataOperation"/>
@@ -851,8 +1125,52 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DataOperation"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            </ObjectInverseOf>
+            <Class IRI="#InvokeDataOperation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DataOwner"/>
         <Class IRI="#CoreParticipant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOwner"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ConditionalClaim"/>
+                    <Class IRI="#OffereeUnconditionalAgreement"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                </ObjectInverseOf>
+                <ObjectUnionOf>
+                    <Class IRI="#ConditionalCommitment"/>
+                    <Class IRI="#OfferorUnconditionalAgreement"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                </ObjectInverseOf>
+                <ObjectUnionOf>
+                    <Class IRI="#Authorization"/>
+                    <Class IRI="#CertificationAct"/>
+                    <Class IRI="#DataSovereigntyAct"/>
+                    <Class IRI="#EconomicOffering"/>
+                    <Class IRI="#EvaluationAct"/>
+                    <Class IRI="#MetadataAssignment"/>
+                    <Class IRI="#Ownership"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DataOwner"/>
@@ -873,6 +1191,20 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
             <Class IRI="#Offer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOwner"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#creates"/>
+            <Class IRI="#DataUsagePolicy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOwner"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#owns"/>
+            <Class IRI="#Data"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -952,6 +1284,19 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DataProvider"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            </ObjectInverseOf>
+            <ObjectUnionOf>
+                <Class IRI="#Authorization"/>
+                <Class IRI="#CertificationAct"/>
+                <Class IRI="#EvaluationAct"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DataSovereigntyAct"/>
         <Class abbreviatedIRI="gufo:Relator"/>
     </SubClassOf>
@@ -1001,13 +1346,6 @@
     <SubClassOf>
         <Class IRI="#DataUsagePolicy"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#Certificate"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DataUsagePolicy"/>
-        <ObjectSomeValuesFrom>
             <ObjectInverseOf>
                 <ObjectProperty abbreviatedIRI="gufo:mediates"/>
             </ObjectInverseOf>
@@ -1029,6 +1367,40 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DataUser"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ConditionalCommitment"/>
+                    <Class IRI="#OfferorUnconditionalAgreement"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                </ObjectInverseOf>
+                <ObjectUnionOf>
+                    <Class IRI="#ConditionalClaim"/>
+                    <Class IRI="#OffereeUnconditionalAgreement"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                </ObjectInverseOf>
+                <ObjectUnionOf>
+                    <Class IRI="#CertificationAct"/>
+                    <Class IRI="#DataUsageAct"/>
+                    <Class IRI="#EconomicOffering"/>
+                    <Class IRI="#EvaluationAct"/>
+                    <Class IRI="#InvokeDataOperation"/>
+                    <Class IRI="#MetadataRetrival"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataUser"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
             <Class IRI="#ConditionalCommitment"/>
@@ -1046,6 +1418,13 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
             <Class IRI="#Offer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataUser"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#calls"/>
+            <Class IRI="#DataOperation"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1104,75 +1483,28 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DigitalAsset"/>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+        <Class IRI="#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalAsset"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#composedBy"/>
+                <Class IRI="#Data"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#composedBy"/>
+                <Class IRI="#DataUsagePolicy"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DigitalAsset"/>
         <ObjectSomeValuesFrom>
             <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
             </ObjectInverseOf>
             <Class IRI="#OfferorUnconditionalAgreement"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicAgreement"/>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicAgreement"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#EconomicOffering"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicOffering"/>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicOffering"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#DataOwner"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicOffering"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#DataUser"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EconomicOffering"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#Offer"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Evaluated"/>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Evaluated"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            </ObjectInverseOf>
-            <Class IRI="#CertificationAct"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Evaluated"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            </ObjectInverseOf>
-            <Class IRI="#EvaluationAct"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1181,10 +1513,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Evaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#EvaluationAct"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Evaluation"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            </ObjectInverseOf>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
             <Class IRI="#EvaluationAct"/>
         </ObjectExactCardinality>
     </SubClassOf>
@@ -1194,17 +1531,18 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EvaluationAct"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#Evaluation"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EvaluationAct"/>
-        <ObjectMinCardinality cardinality="1">
+        <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Evaluated"/>
-        </ObjectMinCardinality>
+            <ObjectUnionOf>
+                <Class IRI="#EvaluationFacility"/>
+                <Class IRI="#EvaluationReport"/>
+                <ObjectUnionOf>
+                    <Class IRI="#BrokerServiceProvider"/>
+                    <Class IRI="#Connector"/>
+                    <Class IRI="#CoreParticipant"/>
+                </ObjectUnionOf>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EvaluationAct"/>
@@ -1221,8 +1559,35 @@
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            <ObjectUnionOf>
+                <Class IRI="#BrokerServiceProvider"/>
+                <Class IRI="#Connector"/>
+                <Class IRI="#CoreParticipant"/>
+            </ObjectUnionOf>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
+            <Class IRI="#Evaluation"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EvaluationFacility"/>
         <Class IRI="#IntermediaryParticipant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationFacility"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#emitsReport"/>
+            <Class IRI="#EvaluationReport"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EvaluationFacility"/>
@@ -1290,24 +1655,6 @@
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Manipulation"/>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Manipulation"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Resource"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Manipulation"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Activity"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Metadata"/>
         <Class IRI="#Resource"/>
     </SubClassOf>
@@ -1342,16 +1689,16 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetadataAssignment"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#BrokerServiceProvider"/>
-        </ObjectSomeValuesFrom>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class IRI="#ConditionalCommitment"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetadataAssignment"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#ConditionalCommitment"/>
+            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            <Class IRI="#BrokerServiceProvider"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -1375,9 +1722,7 @@
     <SubClassOf>
         <Class IRI="#MetadataRetrival"/>
         <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            </ObjectInverseOf>
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
             <Class IRI="#ConditionalClaim"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1403,37 +1748,17 @@
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Offer"/>
+        <Class IRI="#OfferedContribution"/>
         <Class abbreviatedIRI="gufo:Event"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Offer"/>
-        <ObjectMinCardinality cardinality="1">
+        <Class IRI="#OfferedContribution"/>
+        <ObjectAllValuesFrom>
             <ObjectInverseOf>
                 <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
             </ObjectInverseOf>
             <Class IRI="#DataOwner"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Offer"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            </ObjectInverseOf>
-            <Class IRI="#DataUser"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Offer"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
-            <Class IRI="#EconomicOffering"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OfferedContribution"/>
-        <Class abbreviatedIRI="gufo:Event"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OfferedContribution"/>
@@ -1454,6 +1779,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OffereeUnconditionalAgreement"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                <Class IRI="#CounterpartContributionType"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#Counterpart"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <Class IRI="#DataUser"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffereeUnconditionalAgreement"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
             <Class IRI="#CounterpartContributionType"/>
@@ -1461,23 +1803,38 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OffereeUnconditionalAgreement"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            </ObjectInverseOf>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
             <Class IRI="#Counterpart"/>
-        </ObjectSomeValuesFrom>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OffereeUnconditionalAgreement"/>
-        <ObjectMinCardinality cardinality="1">
+        <ObjectExactCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
             <Class IRI="#DataUser"/>
-        </ObjectMinCardinality>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OfferorUnconditionalAgreement"/>
         <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OfferorUnconditionalAgreement"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
+                <Class IRI="#OfferedContributionType"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+                <Class IRI="#DigitalAsset"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+                <Class IRI="#DataOwner"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OfferorUnconditionalAgreement"/>
@@ -1489,16 +1846,16 @@
     <SubClassOf>
         <Class IRI="#OfferorUnconditionalAgreement"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#DataOwner"/>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#DigitalAsset"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OfferorUnconditionalAgreement"/>
-        <ObjectMinCardinality cardinality="1">
+        <ObjectExactCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
-            <Class IRI="#DigitalAsset"/>
-        </ObjectMinCardinality>
+            <Class IRI="#DataOwner"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ownership"/>
@@ -1523,6 +1880,36 @@
         <Class abbreviatedIRI="gufo:FunctionalComplex"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            <Class IRI="#DataExchange"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#perfoms"/>
+            <Class IRI="#Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            </ObjectInverseOf>
+            <Class IRI="#RoleAssignment"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Participant"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#perfoms"/>
+            <Class IRI="#Activity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Resource"/>
         <Class abbreviatedIRI="gufo:FunctionalComplex"/>
     </SubClassOf>
@@ -1542,24 +1929,44 @@
             <Class IRI="#Manipulation"/>
         </ObjectExactCardinality>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RoleAssignment"/>
-        <Class abbreviatedIRI="gufo:Relator"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RoleAssignment"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Participant"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RoleAssignment"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            <Class IRI="#Activity"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Participant"/>
+        <Class IRI="#Resource"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BrokerServiceProvider"/>
+        <Class IRI="#CertificationBody"/>
+        <Class IRI="#EvaluationFacility"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Certificate"/>
+        <Class IRI="#Connector"/>
+        <Class IRI="#Counterpart"/>
+        <Class IRI="#Data"/>
+        <Class IRI="#DataUsagePolicy"/>
+        <Class IRI="#DigitalAsset"/>
+        <Class IRI="#EvaluationReport"/>
+        <Class IRI="#Metadata"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ConditionalClaim"/>
+        <Class IRI="#ConditionalCommitment"/>
+        <Class IRI="#OffereeUnconditionalAgreement"/>
+        <Class IRI="#OfferorUnconditionalAgreement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CounterpartContribution"/>
+        <Class IRI="#DataExchange"/>
+        <Class IRI="#Offer"/>
+        <Class IRI="#OfferedContribution"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DataConsumer"/>
+        <Class IRI="#DataOwner"/>
+        <Class IRI="#DataProvider"/>
+        <Class IRI="#DataUser"/>
+    </DisjointClasses>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Category"/>
         <NamedIndividual IRI="#Activity"/>
@@ -1762,11 +2169,11 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
-        <NamedIndividual IRI="#emits"/>
+        <NamedIndividual IRI="#emitsCertificate"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
-        <NamedIndividual IRI="#emits_1"/>
+        <NamedIndividual IRI="#emitsReport"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
@@ -1808,6 +2215,103 @@
         <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
         <NamedIndividual IRI="#usesData"/>
     </ClassAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#authorize"/>
+        <ObjectProperty IRI="#authorized"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#called"/>
+        <ObjectProperty IRI="#calls"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#certified"/>
+        <ObjectProperty IRI="#certifies"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#componentOf"/>
+        <ObjectProperty IRI="#composedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#controlled"/>
+        <ObjectProperty IRI="#controls"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#created"/>
+        <ObjectProperty IRI="#creates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#enforced"/>
+        <ObjectProperty IRI="#enforces"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#evaluated"/>
+        <ObjectProperty IRI="#evaluates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#manipulated"/>
+        <ObjectProperty IRI="#manipulates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#perfomed"/>
+        <ObjectProperty IRI="#perfoms"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#certifies"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#evaluates"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorize"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#calls"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#certifies"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#controls"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#creates"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#emitsCertificate"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#emitsReport"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#enforces"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#evaluates"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isAttached"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#manipulates"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#owns"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#perfoms"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#publishedOn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#publishes"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#retrives"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#usesData"/>
+    </AsymmetricObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#authorize"/>
         <Class IRI="#DataOwner"/>
@@ -1829,12 +2333,12 @@
         <Class IRI="#DataOwner"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#emits"/>
-        <Class IRI="#EvaluationFacility"/>
+        <ObjectProperty IRI="#emitsCertificate"/>
+        <Class IRI="#CertificationBody"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#emits_1"/>
-        <Class IRI="#CertificationBody"/>
+        <ObjectProperty IRI="#emitsReport"/>
+        <Class IRI="#EvaluationFacility"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#enforces"/>
@@ -1854,7 +2358,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#owns"/>
-        <Class IRI="#Data"/>
+        <Class IRI="#DataOwner"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#perfoms"/>
@@ -1886,7 +2390,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#certifies"/>
-        <Class IRI="#Evaluated"/>
+        <ObjectUnionOf>
+            <Class IRI="#BrokerServiceProvider"/>
+            <Class IRI="#Connector"/>
+            <Class IRI="#CoreParticipant"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#controls"/>
@@ -1897,12 +2405,12 @@
         <Class IRI="#DataUsagePolicy"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#emits"/>
-        <Class IRI="#EvaluationReport"/>
+        <ObjectProperty IRI="#emitsCertificate"/>
+        <Class IRI="#Certificate"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#emits_1"/>
-        <Class IRI="#Certificate"/>
+        <ObjectProperty IRI="#emitsReport"/>
+        <Class IRI="#EvaluationReport"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#enforces"/>
@@ -1910,7 +2418,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#evaluates"/>
-        <Class IRI="#Evaluated"/>
+        <ObjectUnionOf>
+            <Class IRI="#BrokerServiceProvider"/>
+            <Class IRI="#Connector"/>
+            <Class IRI="#CoreParticipant"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAttached"/>
@@ -1922,7 +2434,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#owns"/>
-        <Class IRI="#DataOwner"/>
+        <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#perfoms"/>
@@ -1945,9 +2457,19 @@
         <Class IRI="#DataConsumer"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal>An activity perfomed by actors manipulating resources</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Activity</IRI>
         <Literal xml:lang="en">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Authorization</IRI>
+        <Literal>A data owner could authorize a data provider to provide their data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1955,9 +2477,19 @@
         <Literal xml:lang="en">Authorization</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BrokerServiceProvider</IRI>
+        <Literal>An entity capable of store metadata and turn them accesible for data users.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#BrokerServiceProvider</IRI>
         <Literal xml:lang="en">BrokerServiceProvider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Certificate</IRI>
+        <Literal>Resource thar certifies one participant or component</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1965,9 +2497,19 @@
         <Literal xml:lang="en">Certificate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Certification</IRI>
+        <Literal>Activity for certificate participants and components of an IDS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Certification</IRI>
         <Literal xml:lang="en">Certification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CertificationAct</IRI>
+        <Literal>The act of certification is a relator telling that a Certification Body emitted a certificates that certificates some participant or component.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1975,9 +2517,19 @@
         <Literal xml:lang="en">CertificationAct</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CertificationBody</IRI>
+        <Literal>Entity capable of emitting certificates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#CertificationBody</IRI>
         <Literal xml:lang="en">CertificationBody</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalClaim</IRI>
+        <Literal>Claim made by the Data User in an EconomicOffering</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1985,9 +2537,19 @@
         <Literal xml:lang="en">ConditionalClaim</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalCommitment</IRI>
+        <Literal>Commitment made by the Data Onwer in an Economic Offering</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ConditionalCommitment</IRI>
         <Literal xml:lang="en">ConditionalCommitment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Connector</IRI>
+        <Literal>Software who enforces the data usage policy and make a data operation invoke available for the data user.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1995,14 +2557,34 @@
         <Literal xml:lang="en">Connector</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CoreParticipant</IRI>
+        <Literal>The most important participants of an IDS ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#CoreParticipant</IRI>
         <Literal xml:lang="en">CoreParticipant</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Counterpart</IRI>
+        <Literal>It is data user value object used to get data from a data owner in an economic agreement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Counterpart</IRI>
         <Literal xml:lang="en">Counterpart</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:categorizes"/>
+        <IRI>#CounterpartContribution</IRI>
+        <IRI>#CounterpartContributionType</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CounterpartContribution</IRI>
+        <Literal>This is an event of an user contributing with a counterpart in some negotiation. Events of that type will compose data exchange events.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2013,6 +2595,11 @@
         <AnnotationProperty abbreviatedIRI="gufo:categorizes"/>
         <IRI>#CounterpartContributionType</IRI>
         <IRI>#CounterpartContribution</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CounterpartContributionType</IRI>
+        <Literal>This is a type that can instantiate CounterpartContribution events</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2030,9 +2617,19 @@
         <Literal xml:lang="en">DataConsumer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataExchange</IRI>
+        <Literal>This is an event to represent the main goal of and IDS ecosystem. Data being exchanged perfomed by the core participants.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#DataExchange</IRI>
         <Literal xml:lang="en">DataExchange</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataOperation</IRI>
+        <Literal>Whatever operation that could be made on data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2050,14 +2647,29 @@
         <Literal xml:lang="en">DataProvider</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataSovereigntyAct</IRI>
+        <Literal>Act of creating a data usage policy by the data owner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#DataSovereigntyAct</IRI>
         <Literal xml:lang="en">DataSovereigntyAct</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataUsageAct</IRI>
+        <Literal>A Data Owner could use the data received by a Data Consumer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#DataUsageAct</IRI>
         <Literal xml:lang="en">DataUsageAct</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataUsagePolicy</IRI>
+        <Literal>Rules made by the DataOwner that restrics the usage of Data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2070,9 +2682,19 @@
         <Literal xml:lang="en">DataUser</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalAsset</IRI>
+        <Literal>It is a value object offered by a Data Owner in an economic agreement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#DigitalAsset</IRI>
         <Literal xml:lang="en">DigitalAsset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EconomicAgreement</IRI>
+        <Literal>This is an economic aggreement composed by unconditional agreements of Data User and Data Owner.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2080,14 +2702,19 @@
         <Literal xml:lang="en">EconomicAgreement</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EconomicOffering</IRI>
+        <Literal>This is an Economic Offering composed by a Data Owner commitment and Data User claim.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#EconomicOffering</IRI>
         <Literal xml:lang="en">EconomicOffering</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Evaluated</IRI>
-        <Literal xml:lang="en">Evaluated</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Evaluation</IRI>
+        <Literal>Activity to evaluate components or participants of an IDS</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2095,9 +2722,19 @@
         <Literal xml:lang="en">Evaluation</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EvaluationAct</IRI>
+        <Literal>The act of evaluation is a relator telling that an Evaluation Facility emitted a report that evaluates some participant or component.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#EvaluationAct</IRI>
         <Literal xml:lang="en">EvaluationAct</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EvaluationFacility</IRI>
+        <Literal>Agency who elaborates a preliminary report for a component or participant, this is the frist step to be certified.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2115,9 +2752,19 @@
         <Literal xml:lang="en">IntermediaryParticipant</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InvokeDataOperation</IRI>
+        <Literal>The Invoke Data Operation is a relator telling that a Data User called for a Data Operation and the Connector has to enforce and attach the Data Usage Policy to Data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#InvokeDataOperation</IRI>
         <Literal xml:lang="en">InvokeDataOperation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Manipulation</IRI>
+        <Literal>A manipulation represents some resource being maniulated for an activity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2130,14 +2777,29 @@
         <Literal xml:lang="en">Metadata</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataAssignment</IRI>
+        <Literal>The Data Owner needs to publish metadata into the broker and this relator says exactly that.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MetadataAssignment</IRI>
         <Literal xml:lang="en">MetadataAssignment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataRetrival</IRI>
+        <Literal>The Data User needs to retrive metadata from the Broker, this relator says exactly that.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MetadataRetrival</IRI>
         <Literal xml:lang="en">MetadataRetrival</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Offer</IRI>
+        <Literal>This is an even to descibe an offer, the first part of an economic exchange. In this case, it will be an offer of data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2150,9 +2812,19 @@
         <IRI>#OfferedContributionType</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OfferedContribution</IRI>
+        <Literal>This is the same as CounterpartContribution event, but it is for the offeror. This represents and event of some contribution being offered.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OfferedContribution</IRI>
         <Literal xml:lang="en">OfferedContribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OfferedContributionType</IRI>
+        <Literal>This is a type that can instantiate OfferedContribution events</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2160,14 +2832,29 @@
         <Literal xml:lang="en">OfferedContributionType</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OffereeUnconditionalAgreement</IRI>
+        <Literal>Unconditional agreement made by the Data User.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OffereeUnconditionalAgreement</IRI>
         <Literal xml:lang="en">OffereeUnconditionalAgreement</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OfferorUnconditionalAgreement</IRI>
+        <Literal>Unconditional Agreement made by the Data Owner.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OfferorUnconditionalAgreement</IRI>
         <Literal xml:lang="en">OfferorUnconditionalAgreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ownership</IRI>
+        <Literal>This relator represents the ownership relation between a data owner and the data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2180,9 +2867,19 @@
         <Literal xml:lang="en">Participant</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Resource</IRI>
+        <Literal>It can be any resource being manipulated in an IDS ecosystem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Resource</IRI>
         <Literal xml:lang="en">Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RoleAssignment</IRI>
+        <Literal>A role assignment is an assignment of an activity to a participant</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2216,13 +2913,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#emits</IRI>
-        <Literal xml:lang="en">emits</Literal>
+        <IRI>#emitsCertificate</IRI>
+        <Literal xml:lang="en">emitsCertificate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#emits_1</IRI>
-        <Literal xml:lang="en">emits</Literal>
+        <IRI>#emitsReport</IRI>
+        <Literal xml:lang="en">emitsReport</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
