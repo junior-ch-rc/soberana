@@ -120,6 +120,9 @@
         <Class IRI="#EconomicOffering"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Evaluated"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Evaluation"/>
     </Declaration>
     <Declaration>
@@ -813,11 +816,7 @@
                 <ObjectUnionOf>
                     <Class IRI="#Certificate"/>
                     <Class IRI="#CertificationBody"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#BrokerServiceProvider"/>
-                        <Class IRI="#Connector"/>
-                        <Class IRI="#CoreParticipant"/>
-                    </ObjectUnionOf>
+                    <Class IRI="#Evaluated"/>
                 </ObjectUnionOf>
             </ObjectAllValuesFrom>
             <ObjectMinCardinality cardinality="1">
@@ -830,11 +829,7 @@
             </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <ObjectUnionOf>
-                    <Class IRI="#BrokerServiceProvider"/>
-                    <Class IRI="#Connector"/>
-                    <Class IRI="#CoreParticipant"/>
-                </ObjectUnionOf>
+                <Class IRI="#Evaluated"/>
             </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
                 <ObjectInverseOf>
@@ -970,21 +965,29 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Evaluated"/>
+        <ObjectUnionOf>
+            <Class IRI="#BrokerServiceProvider"/>
+            <Class IRI="#Connector"/>
+            <Class IRI="#CoreParticipant"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#EvaluationAct"/>
         <ObjectIntersectionOf>
             <Class abbreviatedIRI="gufo:Relator"/>
             <ObjectAllValuesFrom>
                 <ObjectProperty abbreviatedIRI="gufo:mediates"/>
                 <ObjectUnionOf>
+                    <Class IRI="#Evaluated"/>
                     <Class IRI="#EvaluationFacility"/>
                     <Class IRI="#EvaluationReport"/>
-                    <ObjectUnionOf>
-                        <Class IRI="#BrokerServiceProvider"/>
-                        <Class IRI="#Connector"/>
-                        <Class IRI="#CoreParticipant"/>
-                    </ObjectUnionOf>
                 </ObjectUnionOf>
             </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+                <Class IRI="#Evaluated"/>
+            </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty abbreviatedIRI="gufo:mediates"/>
                 <Class IRI="#EvaluationFacility"/>
@@ -992,14 +995,6 @@
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty abbreviatedIRI="gufo:mediates"/>
                 <Class IRI="#EvaluationReport"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <ObjectUnionOf>
-                    <Class IRI="#BrokerServiceProvider"/>
-                    <Class IRI="#Connector"/>
-                    <Class IRI="#CoreParticipant"/>
-                </ObjectUnionOf>
             </ObjectMinCardinality>
             <ObjectMinCardinality cardinality="1">
                 <ObjectInverseOf>
@@ -1633,6 +1628,10 @@
             </ObjectInverseOf>
             <Class IRI="#OfferorUnconditionalAgreement"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Evaluated"/>
+        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Evaluation"/>
