@@ -42,6 +42,9 @@
         <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="gufo:Phase"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="gufo:Relator"/>
     </Declaration>
     <Declaration>
@@ -57,10 +60,10 @@
         <Class IRI="#BrokerServiceProvider"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Certificate"/>
+        <Class IRI="#CandidateParticipant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Certification"/>
+        <Class IRI="#Certificate"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CertificationAct"/>
@@ -90,6 +93,9 @@
         <Class IRI="#CounterpartContributionType"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CurrentParticipant"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Data"/>
     </Declaration>
     <Declaration>
@@ -103,6 +109,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#DataSovereigntyAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataSpaceParticipant"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DataSupplier"/>
@@ -120,10 +129,7 @@
         <Class IRI="#EconomicOffering"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Evaluated"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Evaluation"/>
+        <Class IRI="#EvaluatedParticipant"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EvaluationAct"/>
@@ -133,6 +139,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#EvaluationReport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FormerParticipant"/>
     </Declaration>
     <Declaration>
         <Class IRI="#IntermediaryParticipant"/>
@@ -171,6 +180,9 @@
         <Class IRI="#Resource"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TerminationAct"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
     </Declaration>
     <Declaration>
@@ -187,6 +199,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:wasTerminatedIn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#called"/>
@@ -327,6 +342,9 @@
         <NamedIndividual IRI="#CactUser3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#CandidateParticipant"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Certificate"/>
     </Declaration>
     <Declaration>
@@ -453,6 +471,9 @@
         <NamedIndividual IRI="#CounterpartContributionType1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#CurrentParticipant"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#DSactSong1"/>
     </Declaration>
     <Declaration>
@@ -564,6 +585,9 @@
         <NamedIndividual IRI="#EconomicOffering3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#EvaluatedParticipant"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Evaluation"/>
     </Declaration>
     <Declaration>
@@ -601,6 +625,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EvaluationUser3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FormerParticipant"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#IntermediaryParticipant"/>
@@ -804,46 +831,6 @@
         <AnnotationProperty abbreviatedIRI="gufo:categorizes"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#CertificationAct"/>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="gufo:Relator"/>
-            <ObjectAllValuesFrom>
-                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-                <Class IRI="#EvaluationReport"/>
-            </ObjectAllValuesFrom>
-            <ObjectAllValuesFrom>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <ObjectUnionOf>
-                    <Class IRI="#Certificate"/>
-                    <Class IRI="#CertificationBody"/>
-                    <Class IRI="#Evaluated"/>
-                </ObjectUnionOf>
-            </ObjectAllValuesFrom>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#Certificate"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#CertificationBody"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#Evaluated"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectInverseOf>
-                    <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-                </ObjectInverseOf>
-                <Class IRI="#Certification"/>
-            </ObjectMinCardinality>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-                <Class IRI="#EvaluationReport"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
         <Class IRI="#DataExchange"/>
         <ObjectIntersectionOf>
             <Class abbreviatedIRI="gufo:Event"/>
@@ -965,46 +952,6 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Evaluated"/>
-        <ObjectUnionOf>
-            <Class IRI="#BrokerServiceProvider"/>
-            <Class IRI="#Connector"/>
-            <Class IRI="#CoreParticipant"/>
-        </ObjectUnionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#EvaluationAct"/>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="gufo:Relator"/>
-            <ObjectAllValuesFrom>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <ObjectUnionOf>
-                    <Class IRI="#Evaluated"/>
-                    <Class IRI="#EvaluationFacility"/>
-                    <Class IRI="#EvaluationReport"/>
-                </ObjectUnionOf>
-            </ObjectAllValuesFrom>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#Evaluated"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#EvaluationFacility"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-                <Class IRI="#EvaluationReport"/>
-            </ObjectMinCardinality>
-            <ObjectMinCardinality cardinality="1">
-                <ObjectInverseOf>
-                    <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-                </ObjectInverseOf>
-                <Class IRI="#Evaluation"/>
-            </ObjectMinCardinality>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
         <Class IRI="#Offer"/>
         <ObjectIntersectionOf>
             <Class abbreviatedIRI="gufo:Event"/>
@@ -1090,34 +1037,90 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BrokerServiceProvider"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#DataSpaceParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CandidateParticipant"/>
+        <Class IRI="#DataSpaceParticipant"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Certificate"/>
         <Class IRI="#Resource"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Certificate"/>
         <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            </ObjectInverseOf>
-            <Class IRI="#CertificationAct"/>
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#EvaluationReport"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Certification"/>
-        <Class IRI="#Activity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Certification"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#CertificationAct"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Certification"/>
+        <Class IRI="#Certificate"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
             <Class IRI="#CertificationAct"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <Class abbreviatedIRI="gufo:Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
+            <Class IRI="#TerminationAct"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#EvaluationAct"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#CertificationBody"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#Certificate"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#CurrentParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasTerminatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#EvaluatedParticipant"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -1127,17 +1130,15 @@
     <SubClassOf>
         <Class IRI="#CertificationBody"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#emitsCertificate"/>
-            <Class IRI="#Certificate"/>
+            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            <Class IRI="#CertificationAct"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CertificationBody"/>
         <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            </ObjectInverseOf>
-            <Class IRI="#CertificationAct"/>
+            <ObjectProperty IRI="#emitsCertificate"/>
+            <Class IRI="#Certificate"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1261,8 +1262,26 @@
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Connector"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#DataSpaceParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CoreParticipant"/>
         <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoreParticipant"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#DataSpaceParticipant"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Counterpart"/>
@@ -1316,6 +1335,10 @@
             <ObjectProperty IRI="#instantiate"/>
             <Class IRI="#CounterpartContribution"/>
         </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CurrentParticipant"/>
+        <Class IRI="#DataSpaceParticipant"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Data"/>
@@ -1482,6 +1505,31 @@
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DataSpaceParticipant"/>
+        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataSpaceParticipant"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class IRI="#BrokerServiceProvider"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataSpaceParticipant"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class IRI="#Connector"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataSpaceParticipant"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class IRI="#CoreParticipant"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DataSupplier"/>
         <Class IRI="#CoreParticipant"/>
     </SubClassOf>
@@ -1630,25 +1678,56 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Evaluated"/>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+        <Class IRI="#EvaluatedParticipant"/>
+        <Class IRI="#DataSpaceParticipant"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Evaluation"/>
-        <Class IRI="#Activity"/>
+        <Class IRI="#EvaluationAct"/>
+        <Class abbreviatedIRI="gufo:Event"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Evaluation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#EvaluationAct"/>
-        </ObjectAllValuesFrom>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
+            <Class IRI="#CertificationAct"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Evaluation"/>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#EvaluationFacility"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationAct"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
-            <Class IRI="#EvaluationAct"/>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#EvaluatedParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#EvaluationReport"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasTerminatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#CandidateParticipant"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -1658,17 +1737,15 @@
     <SubClassOf>
         <Class IRI="#EvaluationFacility"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#emitsReport"/>
-            <Class IRI="#EvaluationReport"/>
+            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
+            <Class IRI="#EvaluationAct"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EvaluationFacility"/>
         <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="gufo:mediates"/>
-            </ObjectInverseOf>
-            <Class IRI="#EvaluationAct"/>
+            <ObjectProperty IRI="#emitsReport"/>
+            <Class IRI="#EvaluationReport"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1683,6 +1760,26 @@
             </ObjectInverseOf>
             <Class IRI="#EvaluationAct"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationReport"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            <Class IRI="#EvaluationAct"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EvaluationReport"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            </ObjectInverseOf>
+            <Class IRI="#Certificate"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FormerParticipant"/>
+        <Class IRI="#DataSpaceParticipant"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#IntermediaryParticipant"/>
@@ -1980,6 +2077,35 @@
             <Class IRI="#DataExchange"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminationAct"/>
+        <Class abbreviatedIRI="gufo:Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminationAct"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
+            <Class IRI="#CertificationAct"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasCreatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#FormerParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TerminationAct"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:wasTerminatedIn"/>
+            </ObjectInverseOf>
+            <Class IRI="#CurrentParticipant"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Activity"/>
         <Class IRI="#Actor"/>
@@ -2097,6 +2223,10 @@
         <NamedIndividual IRI="#CactUser3"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Phase"/>
+        <NamedIndividual IRI="#CandidateParticipant"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#Certificate"/>
     </ClassAssertion>
@@ -2115,38 +2245,6 @@
     <ClassAssertion>
         <Class IRI="#CertificationBody"/>
         <NamedIndividual IRI="#CertificationBody1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationBroker1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationBroker2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationConnectorOwner"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationConnectorUser2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationConnectorUser3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationOwner1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationUser2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Certification"/>
-        <NamedIndividual IRI="#CertificationUser3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#ConditionalClaim"/>
@@ -2259,6 +2357,10 @@
     <ClassAssertion>
         <Class IRI="#CounterpartContributionType"/>
         <NamedIndividual IRI="#CounterpartContributionType1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Phase"/>
+        <NamedIndividual IRI="#CurrentParticipant"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DataSovereigntyAct"/>
@@ -2409,32 +2511,16 @@
         <NamedIndividual IRI="#EconomicOffering3"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Phase"/>
+        <NamedIndividual IRI="#EvaluatedParticipant"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#Evaluation"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#EvaluationAct"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationBroker1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationBroker2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationConnectorOwner"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationConnectorUser2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationConnectorUser3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Role"/>
@@ -2445,20 +2531,12 @@
         <NamedIndividual IRI="#EvaluationFacility1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationOwner1"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#EvaluationReport"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationUser2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluation"/>
-        <NamedIndividual IRI="#EvaluationUser3"/>
+        <Class abbreviatedIRI="gufo:Phase"/>
+        <NamedIndividual IRI="#FormerParticipant"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
@@ -4456,6 +4534,10 @@
         <NamedIndividual IRI="#User3"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="gufo:wasTerminatedIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#responded"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -4705,7 +4787,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Certificate</IRI>
-        <Literal>Resource thar certifies one participant or component</Literal>
+        <Literal>Resource that certifies one participant or component</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4714,18 +4796,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Certification</IRI>
-        <Literal>Activity for certificate participants and components of an IDS</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Certification</IRI>
-        <Literal xml:lang="en">Certification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#CertificationAct</IRI>
-        <Literal>The act of certification is a relator telling that a Certification Body emitted a certificates that certificates some participant or component.</Literal>
+        <Literal>The act of certification is an event telling that a Certification Body emitted a certificates that certificates some participant or component.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4909,18 +4981,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Evaluation</IRI>
-        <Literal>Activity to evaluate components or participants of an IDS</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Evaluation</IRI>
-        <Literal xml:lang="en">Evaluation</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EvaluationAct</IRI>
-        <Literal>The act of evaluation is a relator telling that an Evaluation Facility emitted a report that evaluates some participant or component.</Literal>
+        <Literal>The act of evaluation is an event telling that an Evaluation Facility emitted a report that evaluates some participant or component.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5131,5 +5193,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
