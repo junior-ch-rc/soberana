@@ -1,0 +1,24 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sbrn: <http://soberana.com#>
+PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+SELECT ?agreement ?offeror ?offeree
+WHERE {
+  ?agreement a sbrn:EconomicAgreement .
+  ?offeror a sbrn:DataSupplier .
+  ?offeree a sbrn:DataCustomer .
+  
+  {
+    ?offerorAgreement a sbrn:OfferorUnconditionalAgreement .
+    ?offerorAgreement gufo:inheresIn ?offeror .
+    ?offerorAgreement sbrn:componentOf ?agreement
+  }
+  .
+  {
+    ?offereeAgreement a sbrn:OffereeUnconditionalAgreement .
+    ?offereeAgreement gufo:inheresIn ?offeree .
+    ?offereeAgreement sbrn:componentOf ?agreement
+  }
+}

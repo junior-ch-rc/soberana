@@ -1,0 +1,34 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sbrn: <http://soberana.com#>
+PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+SELECT DISTINCT ?offer ?offeror ?offeree ?metadata
+WHERE {
+  ?offer a sbrn:Offer .
+  ?offeror gufo:participatedIn ?offer .
+
+  {
+    ?offeror a sbrn:DataSupplier .
+    ?offeror gufo:participatedIn ?offer .
+  }
+  .
+  {
+    ?offeree a sbrn:DataCustomer .
+    ?offeree gufo:participatedIn ?offer .
+  }
+
+  OPTIONAL {
+    ?metadataAssignment a sbrn:MetadataAssignment .
+    ?metadataAssignment gufo:mediates ?metadata .
+    ?metadata a sbrn:Metadata .
+    ?metadataAssignment gufo:historicallyDependsOn ?commitment .
+    .
+    {
+      ?commitment sbrn:componentOf ?economicOffering .
+      ?economicOffering a sbrn:EconomicOffering .
+      ?economicOffering gufo:wasCreatedIn ?offer
+    }
+  }
+}

@@ -1,0 +1,24 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sbrn: <http://soberana.com#>
+PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+SELECT ?participant ?certificate
+WHERE {
+  {
+    ?participant a sbrn:Actor .
+    ?participant sbrn:certified ?certificate .
+    ?certificate a sbrn:Certificate .
+    ?participant sbrn:evaluated ?evaluationReport .
+    ?evaluationReport a sbrn:EvaluationReport .
+  }
+  UNION
+  {
+    ?participant a sbrn:Resource .
+    ?participant sbrn:certified ?certificate .
+    ?certificate a sbrn:Certificate .
+    ?participant sbrn:evaluated ?evaluationReport .
+    ?evaluationReport a sbrn:EvaluationReport .
+  }
+}

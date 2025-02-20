@@ -1,0 +1,19 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sbrn: <http://soberana.com#>
+PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+SELECT DISTINCT ?owner ?data
+WHERE {
+  ?owner a sbrn:DataSupplier .
+  ?sovereigntyAct a sbrn:DataSovereigntyAct .
+  ?sovereigntyAct gufo:mediates ?owner .
+  ?owner sbrn:creates ?dataUsagePolicy .
+  ?connector a sbrn:Connector .
+  ?dataUsagePolicy a sbrn:DataUsagePolicy .
+  ?connector sbrn:enforces ?dataUsagePolicy .
+  ?data a sbrn:Data .
+  ?owner sbrn:controls ?data .
+  ?dataUsagePolicy sbrn:isAttached ?data
+}
