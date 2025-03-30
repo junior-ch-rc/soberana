@@ -838,12 +838,6 @@
                 <ObjectInverseOf>
                     <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
                 </ObjectInverseOf>
-                <Class IRI="#Activity"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectInverseOf>
-                    <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-                </ObjectInverseOf>
                 <Class IRI="#Resource"/>
             </ObjectSomeValuesFrom>
             <ObjectMinCardinality cardinality="1">
@@ -994,14 +988,7 @@
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Activity"/>
-        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Activity"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="gufo:participatedIn"/>
-            <Class IRI="#DataExchange"/>
-        </ObjectSomeValuesFrom>
+        <Class abbreviatedIRI="gufo:Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Actor"/>
