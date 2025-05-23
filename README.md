@@ -40,6 +40,4 @@ The reference ontology should be implemented in OntoUML, serialized in Turtle, a
 
 • QC4. Who is making economic agreements for data sharing?
 
-• QC5. What are the valuable objects negotiated in the economic agreements?
-
 
