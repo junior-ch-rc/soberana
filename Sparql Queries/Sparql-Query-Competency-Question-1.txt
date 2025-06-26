@@ -6,14 +6,21 @@ PREFIX gufo: <http://purl.org/nemo/gufo#>
 
 SELECT DISTINCT ?owner ?data
 WHERE {
-  ?owner a sbrn:DataSupplier .
-  ?sovereigntyAct a sbrn:DataSovereigntyAct .
-  ?sovereigntyAct gufo:mediates ?owner .
-  ?owner sbrn:creates ?dataUsagePolicy .
-  ?connector a sbrn:Connector .
-  ?dataUsagePolicy a sbrn:DataUsagePolicy .
-  ?connector sbrn:enforces ?dataUsagePolicy .
-  ?data a sbrn:Data .
-  ?owner sbrn:controls ?data .
-  ?dataUsagePolicy sbrn:isAttached ?data
+    ?owner a sbrn:DataSupplier .
+    ?data a sbrn:Data .
+    ?sovereigntyAct a sbrn:DataSovereigntyAct .
+    ?dataControlIntention a sbrn:DataControlIntention .
+    ?connector a sbrn:Connector .
+    ?dataUsagePolicy a sbrn:DataUsagePolicy .
+    ?dataUsageRelator a sbrn:DataUsageRelator .
+
+    ?dataControlIntention gufo:inheresIn ?owner .
+    ?dataControlIntention sbrn:isExternalDependencyOf ?sovereigntyAct .
+    ?sovereigntyAct sbrn:founds ?dataUsageRelator .
+    ?dataUsagePolicy sbrn:defines ?dataUsageRelator .
+
+    ?owner sbrn:recognizes ?dataUsagePolicy .
+    ?connector sbrn:enforces ?dataUsagePolicy .
+    ?owner sbrn:owns ?data .
+    ?dataUsagePolicy sbrn:isAttached ?data
 }

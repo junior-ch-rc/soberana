@@ -6,29 +6,29 @@ PREFIX gufo: <http://purl.org/nemo/gufo#>
 
 SELECT DISTINCT ?offer ?offeror ?offeree ?metadata
 WHERE {
-  ?offer a sbrn:Offer .
-  ?offeror gufo:participatedIn ?offer .
-
-  {
-    ?offeror a sbrn:DataSupplier .
+    ?offer a sbrn:Offer .
     ?offeror gufo:participatedIn ?offer .
-  }
-  .
-  {
-    ?offeree a sbrn:DataCustomer .
-    ?offeree gufo:participatedIn ?offer .
-  }
-
-  OPTIONAL {
-    ?metadataAssignment a sbrn:MetadataAssignment .
-    ?metadataAssignment gufo:mediates ?metadata .
-    ?metadata a sbrn:Metadata .
-    ?metadataAssignment gufo:historicallyDependsOn ?commitment .
+    {
+        ?offeror a sbrn:DataSupplier .
+        ?offeror gufo:participatedIn ?offer .
+    }
     .
     {
-      ?commitment sbrn:componentOf ?economicOffering .
-      ?economicOffering a sbrn:EconomicOffering .
-      ?economicOffering gufo:wasCreatedIn ?offer
+        ?offeree a sbrn:DataCustomer . 
+        ?offeree gufo:participatedIn ?offer . 
     }
-  }
+
+    OPTIONAL {
+        ?metadataDisclosure a sbrn:MetadataDisclosure .
+        ?metadataDisclosure gufo:mediates ?metadata .
+        ?metadata a sbrn:Metadata .
+        ?metadataAssignment a sbrn:MetadataAssignment . 
+        ?metadataDisclosure sbrn:isFoundedBy ?metadataAssignment .
+        ?metadataAssignment gufo:externallyDependsOn ?commitment .
+        {
+            ?commitment sbrn:componentOf ?economicOffering .
+            ?economicOffering a sbrn:EconomicOffering . 
+            ?economicOffering gufo:wasCreatedIn ?offer
+        }
+    }
 }
