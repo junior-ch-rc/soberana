@@ -1,15 +1,1275 @@
-<html>
-<head>
-<title>
-OWLDoc
-</title>
-</head>
-<frameset cols="30%,70%">
-    <frameset rows="30%,70%">
-<frame src="contents.html" name="nav" title="Contents"/>
-<frame src="index-all.html" name="subnav" title="Index"/>
-    </frameset>
-    <frame src="ontologies/soberana.html" name="content" title="Content"/>
-    <noframes>classes/index.html</noframes>
-</frameset>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soberana Ontology Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function filterContent() {
+        const query = document.getElementById("search").value.toLowerCase();
+        document.querySelectorAll("[data-label]").forEach((el) => {
+          const label = el.getAttribute("data-label").toLowerCase();
+          el.style.display = label.includes(query) ? "" : "none";
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Floating Index -->
+    <div
+      id="index"
+      class="fixed top-4 right-4 bg-white p-4 rounded-xl shadow-lg border w-64 z-50 hidden lg:block"
+    >
+      <h2 class="text-lg font-semibold mb-2">📚 Index</h2>
+      <ul class="space-y-1 text-sm">
+        <li>
+          <a href="#classes" class="text-blue-600 hover:underline"
+            >📦 Classes</a
+          >
+        </li>
+        <li>
+          <a href="#properties" class="text-green-600 hover:underline"
+            >🔗 Properties</a
+          >
+        </li>
+
+        <li>
+          <a
+            href="https://github.com/junior-ch-rc/soberana"
+            target="_blank"
+            class="text-gray-700 hover:underline"
+            >🌐 GitHub</a
+          >
+        </li>
+      </ul>
+      <input
+        id="search"
+        onkeyup="filterContent()"
+        placeholder="Search..."
+        class="mt-4 w-full p-2 border rounded text-sm"
+      />
+    </div>
+
+    <!-- Mobile index toggle button -->
+    <button
+      id="index-toggle"
+      class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg lg:hidden z-50"
+      aria-label="Toggle index"
+    >
+      📚
+    </button>
+
+    <!-- Mobile index modal -->
+    <div
+      id="index-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"
+      onclick="toggleIndex(false)"
+    ></div>
+    <div
+      id="index-panel"
+      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 lg:hidden"
+    >
+      <div class="p-4">
+        <button
+          onclick="toggleIndex(false)"
+          aria-label="Close index"
+          class="mb-4 flex items-center px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-400"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+          Close
+        </button>
+        <h2 class="text-lg font-semibold mb-2">📚 Index</h2>
+        <ul class="space-y-1 text-sm">
+          <li>
+            <a
+              href="#classes"
+              onclick="toggleIndex(false)"
+              class="text-blue-600 hover:underline"
+              >📦 Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="#properties"
+              onclick="toggleIndex(false)"
+              class="text-green-600 hover:underline"
+              >🔗 Properties</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://github.com/junior-ch-rc/soberana"
+              target="_blank"
+              class="text-gray-700 hover:underline"
+              >🌐 GitHub</a
+            >
+          </li>
+        </ul>
+        <input
+          id="search-mobile"
+          onkeyup="filterContent()"
+          placeholder="Search..."
+          class="mt-4 w-full p-2 border rounded text-sm"
+        />
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <h1 class="text-4xl font-bold text-blue-800 mb-2">Soberana</h1>
+      <p class="text-gray-600 mb-8">
+        An ontology for describing an International Data Spaces Ecosystem from
+        three different perspectives: Sovereignty, Legitimacy and Economic.
+        Soberana is based on OntoUML/UFO concepts. It has as puspose to present
+        a basic conceptual model of the IDS domain and provide the user with a
+        view of the data sovereignty aspects, legitimacy of participants, and
+        the economic agreement for data exchange within these spaces. With the
+        ontology, it should be possible to instantiate IDS organizational models
+        according to the RAM-IDSA parameters, as well as retrieve information
+        for the analysis of the models in the three mentioned aspects. Scope The
+        ontology is aimed at modeling IDS organizational forms with their basic
+        components, focusing solely on economic, data sovereignty, and
+        legitimacy aspects. Its level of detail is directly related to the
+        competence questions.
+      </p>
+
+      <section id="classes">
+        <h2 class="text-2xl font-semibold text-blue-700 border-b pb-2 mb-4">
+          📦 Classes
+        </h2>
+
+        <div class="grid gap-4">
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Activity"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Activity</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Activity</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event that is perfomed by sbrn:Actor. They can be related
+              to Resources, in order to manipulate them. For example:
+              sbrn:DataOperation is an Activity since is perfomed by a
+              sbrn:DataCustomer manipulating Data (sbrn:Resource).
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Actor"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Actor</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Actor</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:FunctionalComplex that plays roles within the IDS ecosystem
+              by manipulating sbrn:Resources to achieve its objectives. This
+              complex is responsible for coordinating actions and processes
+              necessary for the operation and goals of the ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="BrokerServiceProvider"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              BrokerServiceProvider
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#BrokerServiceProvider</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:IntermediaryParticipant responsible for storing metadata
+              and making it accessible to sbrn:DataCustomers.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CandidateParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              CandidateParticipant
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CandidateParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Phase of the sbrn:DataSpaceParticipantState in which a
+              participant expresses intent to join the IDS ecosystem. During
+              this phase, the participant awaits evaluation and has not yet
+              undergone formal assessment.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Certificate"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Certificate</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Certificate</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource that serves as evidence of certification for a
+              participant or a system component within the IDS ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CertificationAct"
+          >
+            <h3 class="text-xl font-bold text-blue-900">CertificationAct</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CertificationAct</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event in which an sbrn:CertificationBody conducts a
+              certification process over an sbrn:Actor. This event marks a
+              transition between two gufo:Phase instances in the Actor's life
+              cycle: it terminates the Actor's sbrn:EvaluatedParticipant phase
+              and initiates its sbrn:CurrentParticipant phase.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CertificationBody"
+          >
+            <h3 class="text-xl font-bold text-blue-900">CertificationBody</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CertificationBody</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:IntermediaryParticipant responsible for certifying
+              sbrn:CoreParticipant and sbrn:BrokerServiceProvider instances and
+              certain sbrn:Resources.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="ConditionalClaim"
+          >
+            <h3 class="text-xl font-bold text-blue-900">ConditionalClaim</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#ConditionalClaim</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that represents the sbrn:DataCustomer’s
+              conditional intent to acquire data. It expresses a demand that
+              depends on specific conditions being met—such as a willingness to
+              receive data only if a counterpart (e.g., payment) is provided.
+              For example, Maria intends to obtain João’s data, but only if she
+              pays him; this intent is modeled as a coex:ConditionalClaim.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="ConditionalCommitment"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              ConditionalCommitment
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#ConditionalCommitment</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that represents the sbrn:DataSupplier’s
+              conditional commitment to offer an object—such as data—within the
+              context of an agreement. This commitment is only fulfilled if
+              certain conditions are met, such as receiving a counterpart from a
+              data customer. For example, João is willing to provide data to
+              Maria, but only if she pays; this intent is modeled as a
+              coex:ConditionalCommitment.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Connector"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Connector</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Connector</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource, specifically a software component, responsible
+              for enforcing an sbrn:DataUsagePolicy within the IDS ecosystem.
+              The connector ensures that data usage complies with the
+              agreed-upon policies during data exchange.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CoreParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">CoreParticipant</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CoreParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Actor that plays a central role in the IDS ecosystem.
+              Without these participants, the IDS ecosystem would lose its
+              purpose. They typically act as both data suppliers and data
+              customers.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Counterpart"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Counterpart</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Counterpart</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource representing the value object offered by an
+              sbrn:DataCustomer in exchange for data owned by another party,
+              typically within the scope of an economic agreement. It reflects
+              what the sbrn:DataSupplier receives in return for providing access
+              to data.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CounterpartContribution"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              CounterpartContribution
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CounterpartContribution</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event in which an sbrn:DataCustomer contributes a
+              counterpart as part of a negotiation process. Events of this type
+              typically compose broader data exchange events and are categorized
+              as instances of a coex:CounterpartContributionType, which
+              classifies CounterpartContribution events.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CounterpartContributionType"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              CounterpartContributionType
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CounterpartContributionType</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:ConcreteIndividualType which instantiates
+              CounterpartContribution events.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="CurrentParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">CurrentParticipant</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#CurrentParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Phase of the sbrn:DataSpaceParticipantState in which the
+              participant has been successfully certified by a
+              sbrn:CertificationBody through a sbrn:CertificationAct, supported
+              by a valid sbrn:Certificate. This phase reflects the actor's
+              active and legitimate participation in the IDS ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Data"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Data</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Data</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource that represents the primary object of negotiation
+              within the IDS ecosystem. It consists of a fragment of information
+              that may carry intrinsic or aggregated value. sbrn:Data is central
+              to the ecosystem's purpose, as it is the main asset exchanged
+              between participants under defined usage conditions.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataControlIntention"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              DataControlIntention
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataControlIntention</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that represents the sbrn:DataSupplier’s
+              inherent intention to exercise control over their own data. It is
+              an ontological intention—a mode of being—that reflects the agent’s
+              commitment to a desired state: maintaining control over their
+              data. This commitment guides the agent’s future actions. In the
+              model, the intention to control data characterizes the
+              sbrn:DataSupplier and gives rise to a sbrn:DataSovereigntyAct.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataCustomer"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataCustomer</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataCustomer</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:CoreParticipant responsible for purchasing or exchanging
+              data within an IDS ecosystem. This participant can embody a
+              combination of two roles: the DataUser, who utilizes the data, and
+              the DataConsumer, who receives data from a DataProvider.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataOperation"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataOperation</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataOperation</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Activity focused on manipulating sbrn:Data. This can be
+              whatever operation over Data (writing, reading, etc).
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataOperationRelator"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              DataOperationRelator
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataOperationRelator</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Relator that mediates the relation between the
+              sbrn:Connector, the sbrn:DataUsagePolicy, and the sbrn:Data. It
+              grounds the material relation sbrn:isAttached, which links a
+              sbrn:DataUsagePolicy to a specific sbrn:Data. The
+              sbrn:DataOperationRelator is founded on a sbrn:DataOperation event
+              (such as reading or writing data) and is governed by the rules
+              defined in the associated sbrn:DataUsagePolicy.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataOwnership"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataOwnership</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataOwnership</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Relator founded on a sbrn:DataSovereigntyAct, responsible
+              for mediating the ownership relationship between a
+              sbrn:DataSupplier and a specific instance of sbrn:Data. The
+              legitimacy and scope of this ownership are defined by a
+              corresponding sbrn:DataUsagePolicy, which specifies who may use,
+              transfer, or modify the data. This relator formalizes and sustains
+              the notion of data ownership within the IDS ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataSovereigntyAct"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataSovereigntyAct</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataSovereigntyAct</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event resulting from the intention to exercise control over
+              data. It corresponds to a CommunicativeAct (speech act) of UFO-C
+              in which an sbrn:DataSupplier publicly asserts its commitment to
+              data control, typically through the proposition or acknowledgment
+              of a sbrn:DataUsagePolicy. Ontologically, this event grounds
+              social and normative relations, giving rise to two relators:
+              sbrn:DataOwnership and sbrn:DataUsageRelator.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataSpaceParticipantState"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              DataSpaceParticipantState
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataSpaceParticipantState</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode representing the general state of an
+              sbrn:CoreParticipant or sbrn:Connector or
+              sbrn:BrokerServiceProvider regarding its participation in the IDS
+              ecosystem. This mode reflects the participant's commitment to a
+              particular level of involvement, based on the IDS governance
+              process. It is manifested through a sequence of gufo:Phase
+              instances that describe the actor's lifecycle as a participant.
+              These phases include candidacy, evaluation, certification, and
+              eventual withdrawal.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataSupplier"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataSupplier</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataSupplier</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:CoreParticipant responsible for selling or exchanging data
+              within an IDS ecosystem. This participant can combine two roles:
+              the DataOwner, who holds the legitimate rights over the sbrn:Data,
+              and the DataProvider, who supplies the sbrn:Data to others.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataUsageIntention"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataUsageIntention</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataUsageIntention</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that characterizes the sbrn:DataCustomer by
+              its intention to use data. This intention drives the agent to
+              perform operations on the data it receives from a
+              sbrn:DataSupplier.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataUsagePolicy"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataUsagePolicy</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataUsagePolicy</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A NormativeDescription from UFO-C, i.e., a description of rules
+              recognized (and often created) by the sbrn:DataSupplier. The
+              policy defines rules, permissions, and restrictions associated
+              with the use of data by others, serving as the main instrument for
+              formalizing and regulating the relation captured by the
+              sbrn:DataUsageRelator. It may also include the specification of
+              the ownership relation (sbrn:DataOwnership) between the
+              sbrn:DataSupplier and the sbrn:Data. Thus, beyond regulating use,
+              this policy establishes the legitimate ownership of the data by
+              the supplier.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DataUsageRelator"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DataUsageRelator</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DataUsageRelator</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Relator founded on a sbrn:DataSovereigntyAct, which
+              mediates the authorized use of data between a sbrn:DataSupplier
+              and a sbrn:DataConsumer. This relator is governed by a
+              sbrn:DataUsagePolicy, which defines the permitted actions over the
+              data. In other words, the policy configures the terms under which
+              the consumer may access, use, or process the data provided by the
+              supplier, establishing the normative foundation for data usage
+              within the IDS ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="DigitalAsset"
+          >
+            <h3 class="text-xl font-bold text-blue-900">DigitalAsset</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#DigitalAsset</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource representing a value object offered by a
+              sbrn:DataSupplier as part of an economic agreement. A
+              sbrn:DigitalAsset is composed of sbrn:Data and an associated
+              sbrn:DataUsagePolicy, combining the informational content with the
+              normative rules governing its use. It encapsulates both value and
+              usage conditions in a single exchangeable unit.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="EvaluatedParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              EvaluatedParticipant
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#EvaluatedParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Phase of the sbrn:DataSpaceParticipantState following an
+              sbrn:EvaluationAct, during which the participant has been formally
+              assessed by an sbrn:EvaluationFacility. The outcome of this
+              process is an sbrn:EvaluationReport, which determines whether the
+              actor meets the criteria to proceed toward certification.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="EvaluationAct"
+          >
+            <h3 class="text-xl font-bold text-blue-900">EvaluationAct</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#EvaluationAct</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event in which an sbrn:EvaluationFacility conducts an
+              evaluation process over an sbrn:Actor. This event marks a
+              transition between two gufo:Phase instances in the Actor's life
+              cycle: it terminates the Actor's sbrn:CandidateParticipant phase
+              and initiates its sbrn:EvaluatedParticipant phase.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="EvaluationFacility"
+          >
+            <h3 class="text-xl font-bold text-blue-900">EvaluationFacility</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#EvaluationFacility</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:IntermediaryParticipant responsible for evaluating
+              sbrn:CoreParticipant and sbrn:BrokerServiceProvider instances and
+              certain sbrn:Resources.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="EvaluationReport"
+          >
+            <h3 class="text-xl font-bold text-blue-900">EvaluationReport</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#EvaluationReport</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource that serves as evidence of evaluation for a
+              participant or a system component within the IDS ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="FormerParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">FormerParticipant</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#FormerParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Phase of the sbrn:DataSpaceParticipantState that begins
+              when a participant ceases participation in the IDS ecosystem. This
+              transition is formalized by a sbrn:TerminationAct and signifies
+              the end of the actor’s involvement as a certified participant.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="IntermediaryParticipant"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              IntermediaryParticipant
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#IntermediaryParticipant</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Actor that plays intermediary roles essential for the
+              proper functioning of the IDS ecosystem, ensuring key
+              characteristics such as sovereignty and legitimacy.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Metadata"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Metadata</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Metadata</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              An sbrn:Resource used to describe and announce sbrn:Data within
+              the IDS ecosystem. sbrn:Metadata enables the discovery and
+              evaluation of data by other participants, typically serving as the
+              basis for negotiation and exchange.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="MetadataAccess"
+          >
+            <h3 class="text-xl font-bold text-blue-900">MetadataAccess</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#MetadataAccess</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Relator founded on the sbrn:MetadataRetrieval event,
+              mediating the relationship among the sbrn:DataCustomer, the
+              sbrn:BrokerServiceProvider, and the sbrn:Metadata. When the
+              sbrn:DataCustomer retrieves the metadata, these metadata are
+              accessible because they are published (sbrn:publishedOn) via the
+              broker.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="MetadataAssignment"
+          >
+            <h3 class="text-xl font-bold text-blue-900">MetadataAssignment</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#MetadataAssignment</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event triggered by a gufo:Mode, specifically a
+              coex:ConditionalCommitment that characterizes the behavior of an
+              sbrn:DataSupplier. For instance, if João (a DataSupplier) intends
+              to sell data to Maria (a DataCustomer), he will do so only if
+              Maria pays him. This describes João’s conditional commitment to
+              sell. Although the sale is conditional, the commitment motivates
+              João (within the IDS context) to publish the sbrn:Metadata of his
+              data to a sbrn:BrokerServiceProvider. Thus, the event of
+              sbrn:MetadataAssignment is a manifestation of this conditional
+              intention.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="MetadataDisclosure"
+          >
+            <h3 class="text-xl font-bold text-blue-900">MetadataDisclosure</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#MetadataDisclosure</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Relator founded on the sbrn:MetadataAssignment event,
+              mediating the relationship among the sbrn:DataSupplier, the
+              sbrn:BrokerServiceProvider, and the sbrn:Metadata. Once the
+              sbrn:DataSupplier publishes the metadata, these metadata are, in
+              turn, made accessible (sbrn:publishedOn) through the broker.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="MetadataRetrieval"
+          >
+            <h3 class="text-xl font-bold text-blue-900">MetadataRetrieval</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#MetadataRetrieval</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event caused by a gufo:Mode, specifically a
+              coex:ConditionalClaim that characterizes the behavior of an
+              sbrn:DataCustomer. For example, if Maria (a DataCustomer) intends
+              to buy data from João (a DataSupplier), she will only proceed if
+              payment is required and accepted. This describes Maria’s
+              conditional claim to purchase. Although the claim is conditional,
+              it motivates Maria—within the IDS context—to retrieve the
+              sbrn:Metadata of João’s data from the sbrn:BrokerServiceProvider.
+              Therefore, the event of sbrn:MetadataRetrieval is a manifestation
+              of this conditional intention.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="OfferedContribution"
+          >
+            <h3 class="text-xl font-bold text-blue-900">OfferedContribution</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#OfferedContribution</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event representing the act of offering a contribution as
+              part of an economic or data exchange. coex:OfferedContribution is
+              an instantiation of coex:OfferContributionType events,
+              specifically describing the contribution made by the offeror
+              during the initial stage of a negotiation or exchange. It captures
+              the proactive intent to provide something of value, such as data,
+              in return for a counterpart.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="OfferedContributionType"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              OfferedContributionType
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#OfferedContributionType</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:ConcreteIndividualType which instantiate
+              OfferedContribution events.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="OffereeUnconditionalAgreement"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              OffereeUnconditionalAgreement
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI:
+              <code>http://soberana.com#OffereeUnconditionalAgreement</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that characterizes the sbrn:DataSupplier at
+              the moment of sealing an economic agreement. It represents the
+              supplier’s unconditional intention to deliver one or more
+              sbrn:DigitalAssets—comprising both data and its associated usage
+              policy. This mode arises once prior conditions (as expressed in a
+              coex:ConditionalCommitment) have been satisfied and the agreement
+              is finalized. It is mutually dependent on the
+              coex:OffereeUnconditionalAgreement, as the supplier’s commitment
+              only becomes effective when the customer also agrees to provide a
+              valid sbrn:Counterpart.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="OfferorUnconditionalAgreement"
+          >
+            <h3 class="text-xl font-bold text-blue-900">
+              OfferorUnconditionalAgreement
+            </h3>
+            <p class="text-sm text-gray-500">
+              URI:
+              <code>http://soberana.com#OfferorUnconditionalAgreement</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:IntrinsicMode that characterizes the sbrn:DataCustomer when
+              entering into an economic agreement. It reflects the customer’s
+              unconditional intention to provide a sbrn:Counterpart (e.g.,
+              payment, service, or data) in exchange for the agreed
+              sbrn:DigitalAsset. This mode is the final stage of the customer's
+              commitment, transitioning from a coex:ConditionalClaim. It is
+              mutually dependent on the coex:OfferorUnconditionalAgreement, as
+              the customer’s agreement is only valid when there is a
+              corresponding offer of value from the supplier.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="Resource"
+          >
+            <h3 class="text-xl font-bold text-blue-900">Resource</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#Resource</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:FunctionalComplex representing any object manipulated
+              within the IDS ecosystem, where it has its significance in one or
+              more processes.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow max-w-full break-words overflow-hidden"
+            data-label="TerminationAct"
+          >
+            <h3 class="text-xl font-bold text-blue-900">TerminationAct</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#TerminationAct</code>
+            </p>
+
+            <p class="mt-2 text-gray-700">
+              A gufo:Event in which an sbrn:Actor either decides to leave the
+              IDS ecosystem or ceases to be part of it due to the invalidation
+              of its certification. This event marks a transition between two
+              gufo:Phase instances in the actor’s life cycle: it terminates the
+              sbrn:CertificatedParticipant phase and initiates the
+              sbrn:FormerParticipant phase.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="properties" class="mt-12">
+        <h2 class="text-2xl font-semibold text-green-700 border-b pb-2 mb-4">
+          🔗 Properties
+        </h2>
+
+        <div class="grid gap-4">
+          <div class="bg-white p-5 rounded shadow" data-label="calls">
+            <h3 class="text-xl font-bold text-green-900">calls</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#calls</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataCustomer</code> | Range:
+              <code>http://soberana.com#DataOperation</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="certifies">
+            <h3 class="text-xl font-bold text-green-900">certifies</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#certifies</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#Certificate</code> | Range:
+              <code>Na34bd116aa004cdd8fe0e524ab320b48</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="defines">
+            <h3 class="text-xl font-bold text-green-900">defines</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#defines</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataUsagePolicy</code> | Range:
+              <code>http://purl.org/nemo/gufo#Relator</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="describes">
+            <h3 class="text-xl font-bold text-green-900">describes</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#describes</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#Metadata</code> | Range:
+              <code>http://soberana.com#Data</code>
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded shadow"
+            data-label="emitsCertificate"
+          >
+            <h3 class="text-xl font-bold text-green-900">emitsCertificate</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#emitsCertificate</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#CertificationBody</code> |
+              Range: <code>http://soberana.com#Certificate</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="emitsReport">
+            <h3 class="text-xl font-bold text-green-900">emitsReport</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#emitsReport</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#EvaluationFacility</code> |
+              Range: <code>http://soberana.com#EvaluationReport</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="enforces">
+            <h3 class="text-xl font-bold text-green-900">enforces</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#enforces</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#Connector</code> | Range:
+              <code>http://soberana.com#DataUsagePolicy</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="evaluates">
+            <h3 class="text-xl font-bold text-green-900">evaluates</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#evaluates</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#EvaluationReport</code> | Range:
+              <code>N8dbfe49d23cc461a9ee745417b44cd79</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="founds">
+            <h3 class="text-xl font-bold text-green-900">founds</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#founds</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://purl.org/nemo/gufo#Event</code> | Range:
+              <code>http://purl.org/nemo/gufo#Relator</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="inheresIn">
+            <h3 class="text-xl font-bold text-green-900">inheresIn</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://purl.org/nemo/gufo#inheresIn</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://purl.org/nemo/gufo#IntrinsicMode</code> |
+              Range: <code>http://purl.org/nemo/gufo#FunctionalComplex</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="isAttached">
+            <h3 class="text-xl font-bold text-green-900">isAttached</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#isAttached</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataUsagePolicy</code> | Range:
+              <code>http://soberana.com#Data</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="mediates">
+            <h3 class="text-xl font-bold text-green-900">mediates</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://purl.org/nemo/gufo#mediates</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://purl.org/nemo/gufo#Relator</code> | Range:
+              <code>http://purl.org/nemo/gufo#FunctionalComplex</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="owns">
+            <h3 class="text-xl font-bold text-green-900">owns</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#owns</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataSupplier</code> | Range:
+              <code>http://soberana.com#Data</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="publishedOn">
+            <h3 class="text-xl font-bold text-green-900">publishedOn</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#publishedOn</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#Metadata</code> | Range:
+              <code>http://soberana.com#BrokerServiceProvider</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="publishes">
+            <h3 class="text-xl font-bold text-green-900">publishes</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#publishes</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataSupplier</code> | Range:
+              <code>http://soberana.com#Metadata</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="recognizes">
+            <h3 class="text-xl font-bold text-green-900">recognizes</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#recognizes</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#CoreParticipant</code> | Range:
+              <code>http://soberana.com#DataUsagePolicy</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="responds">
+            <h3 class="text-xl font-bold text-green-900">responds</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#responds</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataSupplier</code> | Range:
+              <code>http://soberana.com#DataOperation</code>
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded shadow" data-label="retrives">
+            <h3 class="text-xl font-bold text-green-900">retrives</h3>
+            <p class="text-sm text-gray-500">
+              URI: <code>http://soberana.com#retrives</code>
+            </p>
+
+            <p class="text-sm mt-1">
+              Domain: <code>http://soberana.com#DataCustomer</code> | Range:
+              <code>http://soberana.com#Metadata</code>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-center text-gray-500 text-sm">
+        Automatically generated on 2025-07-16 16:55
+      </footer>
+    </div>
+
+    <script>
+      const indexToggleBtn = document.getElementById("index-toggle");
+      const indexModal = document.getElementById("index-modal");
+      const indexPanel = document.getElementById("index-panel");
+
+      indexToggleBtn.addEventListener("click", () => {
+        const isOpen = !indexPanel.classList.contains("translate-x-full");
+        toggleIndex(!isOpen);
+      });
+
+      function toggleIndex(show) {
+        if (show) {
+          indexPanel.classList.remove("translate-x-full");
+          indexModal.classList.remove("hidden");
+        } else {
+          indexPanel.classList.add("translate-x-full");
+          indexModal.classList.add("hidden");
+        }
+      }
+
+      function filterContent() {
+        const queryDesktop = document
+          .getElementById("search")
+          .value.toLowerCase();
+        const queryMobile = document
+          .getElementById("search-mobile")
+          .value.toLowerCase();
+        const query = queryDesktop.length > 0 ? queryDesktop : queryMobile;
+        document.querySelectorAll("[data-label]").forEach((el) => {
+          const label = el.getAttribute("data-label").toLowerCase();
+          el.style.display = label.includes(query) ? "" : "none";
+        });
+      }
+    </script>
+  </body>
 </html>

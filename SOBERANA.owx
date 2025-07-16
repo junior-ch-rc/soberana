@@ -17,6 +17,10 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <Literal>An ontology for describing an International Data Spaces Ecosystem from three different perspectives: Sovereignty, Legitimacy and Economic. Soberana is based on OntoUML/UFO concepts.</Literal>
     </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">It has as puspose to present a basic conceptual model of the IDS domain and provide the user with a view of the data sovereignty aspects, legitimacy of participants, and the economic agreement for data exchange within these spaces. With the ontology, it should be possible to instantiate IDS organizational models according to the RAM-IDSA parameters, as well as retrieve information for the analysis of the models in the three mentioned aspects. Scope The ontology is aimed at modeling IDS organizational forms with their basic components, focusing solely on economic, data sovereignty, and legitimacy aspects. Its level of detail is directly related to the competence questions.</Literal>
+    </Annotation>
     <Declaration>
         <Class abbreviatedIRI="gufo:Category"/>
     </Declaration>
@@ -270,9 +274,6 @@
         <ObjectProperty IRI="#hadParticipant"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#instantiate"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isAttached"/>
     </Declaration>
     <Declaration>
@@ -364,6 +365,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Certificate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CertificationAct"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CertificationBody"/>
@@ -480,9 +484,6 @@
         <NamedIndividual IRI="#CounterpartContributionType"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#CurrentParticipant"/>
     </Declaration>
     <Declaration>
@@ -573,6 +574,9 @@
         <NamedIndividual IRI="#DataOwnership"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#DataSovereigntyAct"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#DataSpaceParticipantState"/>
     </Declaration>
     <Declaration>
@@ -642,6 +646,9 @@
         <NamedIndividual IRI="#EvaluatedParticipant"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#EvaluationAct"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#EvaluationBroker1"/>
     </Declaration>
     <Declaration>
@@ -681,6 +688,9 @@
         <NamedIndividual IRI="#IntermediaryParticipant"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#MetadaRetrieval"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Metadata"/>
     </Declaration>
     <Declaration>
@@ -691,6 +701,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MetadataAccess3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MetadataAssignment"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MetadataAssignment2"/>
@@ -739,9 +752,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OfferedContributionType"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OffereeUnconditionalAgreement"/>
@@ -796,6 +806,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Song3Metadata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TerminationAct"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#User1"/>
@@ -1331,20 +1344,6 @@
     <SubClassOf>
         <Class IRI="#CounterpartContributionType"/>
         <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CounterpartContributionType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#instantiate"/>
-            <Class IRI="#CounterpartContribution"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CounterpartContributionType"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#instantiate"/>
-            <Class IRI="#CounterpartContribution"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CurrentParticipant"/>
@@ -2193,20 +2192,6 @@
         <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#OfferedContributionType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#instantiate"/>
-            <Class IRI="#OfferedContribution"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OfferedContributionType"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#instantiate"/>
-            <Class IRI="#OfferedContribution"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#OffereeUnconditionalAgreement"/>
         <Class abbreviatedIRI="gufo:IntrinsicMode"/>
     </SubClassOf>
@@ -2367,6 +2352,10 @@
         <NamedIndividual IRI="#Activity"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#Activity"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DigitalAsset"/>
         <NamedIndividual IRI="#Asset1"/>
     </ClassAssertion>
@@ -2445,6 +2434,10 @@
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#Certificate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#CertificationAct"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Role"/>
@@ -2551,6 +2544,10 @@
         <NamedIndividual IRI="#CounterpartContribution"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#CounterpartContributionType"/>
+        <NamedIndividual IRI="#CounterpartContribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#CounterpartContribution"/>
         <NamedIndividual IRI="#CounterpartContributionEvent1"/>
     </ClassAssertion>
@@ -2561,10 +2558,6 @@
     <ClassAssertion>
         <Class IRI="#CounterpartContribution"/>
         <NamedIndividual IRI="#CounterpartContributionEvent3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#CounterpartContributionType"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Phase"/>
@@ -2687,6 +2680,10 @@
         <NamedIndividual IRI="#DataOwnership"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#DataSovereigntyAct"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#DataSpaceParticipantState"/>
     </ClassAssertion>
@@ -2779,6 +2776,10 @@
         <NamedIndividual IRI="#EvaluatedParticipant"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#EvaluationAct"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Role"/>
         <NamedIndividual IRI="#EvaluationFacility"/>
     </ClassAssertion>
@@ -2799,6 +2800,10 @@
         <NamedIndividual IRI="#IntermediaryParticipant"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#MetadaRetrieval"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
         <NamedIndividual IRI="#Metadata"/>
     </ClassAssertion>
@@ -2813,6 +2818,10 @@
     <ClassAssertion>
         <Class IRI="#MetadataAccess"/>
         <NamedIndividual IRI="#MetadataAccess3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#MetadataAssignment"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#MetadataAssignment"/>
@@ -2863,6 +2872,10 @@
         <NamedIndividual IRI="#OfferedContribution"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#OfferedContributionType"/>
+        <NamedIndividual IRI="#OfferedContribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#OfferedContribution"/>
         <NamedIndividual IRI="#OfferedContributionEvent1"/>
     </ClassAssertion>
@@ -2873,10 +2886,6 @@
     <ClassAssertion>
         <Class IRI="#OfferedContribution"/>
         <NamedIndividual IRI="#OfferedContributionEvent3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#OfferedContributionType"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="gufo:Kind"/>
@@ -2949,6 +2958,10 @@
     <ClassAssertion>
         <Class IRI="#Metadata"/>
         <NamedIndividual IRI="#Song3Metadata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:EventType"/>
+        <NamedIndividual IRI="#TerminationAct"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DataCustomer"/>
@@ -3441,21 +3454,6 @@
         <NamedIndividual IRI="#DataExchangeEvent3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-        <NamedIndividual IRI="#CounterpartContributionEvent1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-        <NamedIndividual IRI="#CounterpartContributionEvent2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-        <NamedIndividual IRI="#CounterpartContributionEvent3"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
         <NamedIndividual IRI="#DCIntention1"/>
         <NamedIndividual IRI="#Owner1"/>
@@ -4076,21 +4074,6 @@
         <NamedIndividual IRI="#MetadataAccess3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
-        <NamedIndividual IRI="#OfferedContributionEvent1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
-        <NamedIndividual IRI="#OfferedContributionEvent2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#instantiate"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
-        <NamedIndividual IRI="#OfferedContributionEvent3"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
         <NamedIndividual IRI="#Owner1"/>
         <NamedIndividual IRI="#ClaimUser1"/>
@@ -4246,11 +4229,6 @@
         <NamedIndividual IRI="#DataOperation3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#OwnerAgreement1"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
         <NamedIndividual IRI="#OwnerAgreement1"/>
         <NamedIndividual IRI="#Asset1"/>
@@ -4261,11 +4239,6 @@
         <NamedIndividual IRI="#Owner1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#OwnerAgreement2"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
         <NamedIndividual IRI="#OwnerAgreement2"/>
         <NamedIndividual IRI="#Asset2"/>
@@ -4274,11 +4247,6 @@
         <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
         <NamedIndividual IRI="#OwnerAgreement2"/>
         <NamedIndividual IRI="#Owner1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#OwnerAgreement3"/>
-        <NamedIndividual IRI="#OfferedContributionType1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
@@ -4506,11 +4474,6 @@
         <NamedIndividual IRI="#Song3Metadata"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#UserAgreement1"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
         <NamedIndividual IRI="#UserAgreement1"/>
         <NamedIndividual IRI="#Counterpart1"/>
@@ -4521,11 +4484,6 @@
         <NamedIndividual IRI="#User1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#UserAgreement2"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
         <NamedIndividual IRI="#UserAgreement2"/>
         <NamedIndividual IRI="#Counterpart2"/>
@@ -4534,11 +4492,6 @@
         <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
         <NamedIndividual IRI="#UserAgreement2"/>
         <NamedIndividual IRI="#User2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="gufo:externallyDependsOn"/>
-        <NamedIndividual IRI="#UserAgreement3"/>
-        <NamedIndividual IRI="#CounterpartContributionType1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="gufo:historicallyDependsOn"/>
@@ -4672,9 +4625,6 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#evaluates"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#instantiate"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isAttached"/>
@@ -4856,13 +4806,113 @@
     </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Category</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:EndurantType that is both non-sortal and rigid. It captures essential properties that apply to instances of different kinds.
+
+For example, &quot;PhysicalObject&quot; may be considered a gufo:Category, encompassing objects such as cars, planets, trees.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:ConcreteIndividualType</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:Type whose instances are concrete individuals.
+
+Instances of gufo:ConcreteIndividualType are subclasses of gufo:ConcreteIndividual.
+
+Examples include the gufo:Kind &quot;Person&quot;, the gufo:Category &quot;Physical Object&quot;, the sbrn:OfferedContributionType &quot;OfferedContributionEvent&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Event</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:ConcreteIndividual that &apos;occurs&apos; or &apos;happens&apos; in time. They may be instantaneous or long-running. Events are those &quot;things that happen to or are performed by&quot; (Casati and Varzi, 2015) endurants. 
+
+Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs.
+
+Also termed &quot;happening&quot;, &quot;occurrence&quot;, &quot;perdurant&quot; or &quot;occurrent&quot; in the philosophical literature.
+
+Casati, R. &amp; Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:EventType</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:Type whose instances are events.
+
+Instances of gufo:EventType are subclasses of gufo:Event.
+
+Examples include &quot;Business Meeting&quot;, &quot;Birth&quot;, &quot;Musical Performance&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:FunctionalComplex</AbbreviatedIRI>
+        <Literal xml:lang="en">A complex gufo:Object whose parts (components) play different roles in its composition. 
+
+For example, a person could be considered a gufo:FunctionalComplex with the various organs (heart, brain, lungs, etc.) playing different roles. Another example is a scrum team, which is composed by people playing the roles of scrum master, product owner, developer, etc.
+
+To explicitly capture temporary components, use gufo:TemporaryParthoodSituation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:IntrinsicMode</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:IntrinsicAspect that is not measurable.
+
+For example, Bob&apos;s belief that the Eiffel Tower is in Paris, his math skills, his headache.
+
+Corresponds to &quot;Mode&quot; in Guizzardi (2005).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Kind</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:EndurantType that is both sortal and rigid. It provides a uniform principle of identity for its instances. Every gufo:Endurant instantiates one and only one gufo:Kind. 
+
+Examples include kinds of ordinary objects of everyday experience, such as: &quot;Person&quot;, &quot;House&quot;, &quot;Car&quot;; kinds of relators, such as &quot;Marriage&quot;, &quot;RentalContract&quot;; kinds of existentially-dependent aspects of objects, such as &quot;Weight&quot;, &quot;Belief&quot;, &quot;Vulnerability&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:MaterialRelationshipType</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:RelationshipType derived from extrinsic aspects of the related entities.
+
+For example, &quot;marriedWith&quot;, &quot;employedBy&quot;, &quot;enrolledIn&quot;, &quot;admires&quot;. 
+
+For a gufo:MaterialRelationshipType it is recommended to identify the type of extrinsic aspect from which the material relationship type is derived (see gufo:isDerivedFrom). For example &quot;marriedWith&quot; can be derived from the &quot;Marriage&quot; relator type, &quot;employedBy&quot; can be derived from the &quot;Employment&quot; relator type.
+
+Encompasses &quot;Material Relation&quot; in Guizzardi (2005) and corresponds to &quot;Material Relation&quot; in Fonseca et al. (2019).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Phase</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:EndurantType that is both sortal and anti-rigid. It is defined by instrinsic but contingent instantiation conditions. Phases are relationally independent types that capturec instrinsic properties shared by instances of a given kind.
+
+For example, &quot;Child&quot; may be considered a gufo:Phase as a subclass of the gufo:Kind &quot;Person&quot;, instantiated by persons younger than 12. Another example is the type &quot;IllPerson&quot;, which may be considered a gufo:Phase that is instantiated whenever an instance of &quot;Disease&quot; (a gufo:IntrinsicMode) inheres in a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Relator</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:ExtrinsicAspect that connects (involves, mediates) two or more concrete individuals. Relators are reified relationships composed of reciprocal extrinsic modes.
+
+Examples of relators include John and Mary&apos;s marriage (composed of John&apos;s obligations towards Mary in the scope of the marriage, Mary&apos;s reciprocal claims, Mary&apos;s obligations towards John, John&apos;s reciprocal claims), Mary&apos;s employment contract at Nasa, a covalent bond between two atoms.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>gufo:Role</AbbreviatedIRI>
+        <Literal xml:lang="en">A gufo:EndurantType that both sortal and anti-rigid. It is defined by relational instantiation conditions. Roles are relationally dependent types, capturing relational properties shared by instances of a given kind.
+
+For example, &quot;Student&quot; may be considered a gufo:Role as a subclass of the gufo:Kind &quot;Person&quot;, instantiated by all persons enrolled in a school. &quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Activity</IRI>
-        <Literal>An activity perfomed by actors manipulating resources</Literal>
+        <Literal xml:lang="en">A gufo:Event that is perfomed by sbrn:Actor. They can be related to Resources, in order to manipulate them.
+
+For example: sbrn:DataOperation is an Activity since is perfomed by a sbrn:DataCustomer manipulating Data (sbrn:Resource).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Activity</IRI>
         <Literal xml:lang="en">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en">A gufo:FunctionalComplex that plays roles within the IDS ecosystem by manipulating sbrn:Resources to achieve its objectives. This complex is responsible for coordinating actions and processes necessary for the operation and goals of the ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4872,7 +4922,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BrokerServiceProvider</IRI>
-        <Literal>An entity capable of store metadata and turn them accesible for data users.</Literal>
+        <Literal xml:lang="en">An sbrn:IntermediaryParticipant responsible for storing metadata and making it accessible to sbrn:DataCustomers.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4881,8 +4931,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CandidateParticipant</IRI>
+        <Literal xml:lang="en">A gufo:Phase of the sbrn:DataSpaceParticipantState in which a participant expresses intent to join the IDS ecosystem. During this phase, the participant awaits evaluation and has not yet undergone formal assessment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Certificate</IRI>
-        <Literal>Resource that certifies one participant or component</Literal>
+        <Literal xml:lang="en">An sbrn:Resource that serves as evidence of certification for a participant or a system component within the IDS ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4891,8 +4946,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CertificationAct</IRI>
+        <Literal xml:lang="en">A gufo:Event in which an sbrn:CertificationBody conducts a certification process over an sbrn:Actor. This event marks a transition between two gufo:Phase instances in the Actor&apos;s life cycle: it terminates the Actor&apos;s sbrn:EvaluatedParticipant phase and initiates its sbrn:CurrentParticipant phase.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#CertificationBody</IRI>
-        <Literal>Entity capable of emitting certificates</Literal>
+        <Literal xml:lang="en">An sbrn:IntermediaryParticipant responsible for certifying sbrn:CoreParticipant and sbrn:BrokerServiceProvider instances and certain sbrn:Resources.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4902,7 +4962,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ConditionalClaim</IRI>
-        <Literal>Claim made by the Data User in an EconomicOffering</Literal>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that represents the sbrn:DataCustomer’s conditional intent to acquire data. It expresses a demand that depends on specific conditions being met—such as a willingness to receive data only if a counterpart (e.g., payment) is provided. For example, Maria intends to obtain João’s data, but only if she pays him; this intent is modeled as a coex:ConditionalClaim.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4912,7 +4972,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ConditionalCommitment</IRI>
-        <Literal>Commitment made by the Data Onwer in an Economic Offering</Literal>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that represents the sbrn:DataSupplier’s conditional commitment to offer an object—such as data—within the context of an agreement. This commitment is only fulfilled if certain conditions are met, such as receiving a counterpart from a data customer. For example, João is willing to provide data to Maria, but only if she pays; this intent is modeled as a coex:ConditionalCommitment.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4922,7 +4982,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Connector</IRI>
-        <Literal>Software who enforces the data usage policy and make a data operation invoke available for the data user.</Literal>
+        <Literal xml:lang="en">An sbrn:Resource, specifically a software component, responsible for enforcing an sbrn:DataUsagePolicy within the IDS ecosystem. The connector ensures that data usage complies with the agreed-upon policies during data exchange.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4932,7 +4992,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#CoreParticipant</IRI>
-        <Literal>The most important participants of an IDS ecosystem.</Literal>
+        <Literal xml:lang="en">An sbrn:Actor that plays a central role in the IDS ecosystem. Without these participants, the IDS ecosystem would lose its purpose. They typically act as both data suppliers and data customers.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4942,7 +5002,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Counterpart</IRI>
-        <Literal>It is data user value object used to get data from a data owner in an economic agreement.</Literal>
+        <Literal xml:lang="en">An sbrn:Resource representing the value object offered by an sbrn:DataCustomer in exchange for data owned by another party, typically within the scope of an economic agreement. It reflects what the sbrn:DataSupplier receives in return for providing access to data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4957,7 +5017,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#CounterpartContribution</IRI>
-        <Literal>This is an event of an user contributing with a counterpart in some negotiation. Events of that type will compose data exchange events.</Literal>
+        <Literal xml:lang="en">A gufo:Event in which an sbrn:DataCustomer contributes a counterpart as part of a negotiation process. Events of this type typically compose broader data exchange events and are categorized as instances of a coex:CounterpartContributionType, which classifies CounterpartContribution events.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4972,7 +5032,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#CounterpartContributionType</IRI>
-        <Literal>This is a type that can instantiate CounterpartContribution events</Literal>
+        <Literal xml:lang="en">A gufo:ConcreteIndividualType which instantiates CounterpartContribution events.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4980,9 +5040,29 @@
         <Literal xml:lang="en">CounterpartContributionType</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CurrentParticipant</IRI>
+        <Literal xml:lang="en">A gufo:Phase of the sbrn:DataSpaceParticipantState in which the participant has been successfully certified by a sbrn:CertificationBody through a sbrn:CertificationAct, supported by a valid sbrn:Certificate. This phase reflects the actor&apos;s active and legitimate participation in the IDS ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Data</IRI>
+        <Literal xml:lang="en">An sbrn:Resource that represents the primary object of negotiation within the IDS ecosystem. It consists of a fragment of information that may carry intrinsic or aggregated value. sbrn:Data is central to the ecosystem&apos;s purpose, as it is the main asset exchanged between participants under defined usage conditions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Data</IRI>
         <Literal xml:lang="en">Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataControlIntention</IRI>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that represents the sbrn:DataSupplier’s inherent intention to exercise control over their own data. It is an ontological intention—a mode of being—that reflects the agent’s commitment to a desired state: maintaining control over their data. This commitment guides the agent’s future actions. In the model, the intention to control data characterizes the sbrn:DataSupplier and gives rise to a sbrn:DataSovereigntyAct.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataCustomer</IRI>
+        <Literal xml:lang="en">An sbrn:CoreParticipant responsible for purchasing or exchanging data within an IDS ecosystem. This participant can embody a combination of two roles: the DataUser, who utilizes the data, and the DataConsumer, who receives data from a DataProvider.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -4992,7 +5072,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DataExchange</IRI>
-        <Literal>This is an event to represent the main goal of and IDS ecosystem. Data being exchanged perfomed by the core participants.</Literal>
+        <Literal xml:lang="en">A gufo:Event that represents the central purpose of an IDS ecosystem: the data exchange carried out by instances of sbrn:CoreParticipant. This event captures the execution of transactions between participants, serving as the primary economic and operaitonal process within the ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5001,13 +5081,38 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataOperation</IRI>
+        <Literal xml:lang="en">An sbrn:Activity focused on manipulating sbrn:Data. This can be whatever operation over Data (writing, reading, etc).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataOperationRelator</IRI>
+        <Literal xml:lang="en">A gufo:Relator that mediates the relation between the sbrn:Connector, the sbrn:DataUsagePolicy, and the sbrn:Data. It grounds the material relation sbrn:isAttached, which links a sbrn:DataUsagePolicy to a specific sbrn:Data. The sbrn:DataOperationRelator is founded on a sbrn:DataOperation event (such as reading or writing data) and is governed by the rules defined in the associated sbrn:DataUsagePolicy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DataOwnership</IRI>
-        <Literal>This relator represents the ownership relation between a data owner and the data.</Literal>
+        <Literal xml:lang="en">A gufo:Relator founded on a sbrn:DataSovereigntyAct, responsible for mediating the ownership relationship between a sbrn:DataSupplier and a specific instance of sbrn:Data. The legitimacy and scope of this ownership are defined by a corresponding sbrn:DataUsagePolicy, which specifies who may use, transfer, or modify the data. This relator formalizes and sustains the notion of data ownership within the IDS ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#DataOwnership</IRI>
         <Literal xml:lang="en">DataOwnership</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataSovereigntyAct</IRI>
+        <Literal xml:lang="en">A gufo:Event resulting from the intention to exercise control over data. It corresponds to a CommunicativeAct (speech act) of UFO-C in which an sbrn:DataSupplier publicly asserts its commitment to data control, typically through the proposition or acknowledgment of a sbrn:DataUsagePolicy. Ontologically, this event grounds social and normative relations, giving rise to two relators: sbrn:DataOwnership and sbrn:DataUsageRelator.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataSpaceParticipantState</IRI>
+        <Literal xml:lang="en">A gufo:IntrinsicMode representing the general state of an sbrn:CoreParticipant or sbrn:Connector or sbrn:BrokerServiceProvider regarding its participation in the IDS ecosystem. This mode reflects the participant&apos;s commitment to a particular level of involvement, based on the IDS governance process. It is manifested through a sequence of gufo:Phase instances that describe the actor&apos;s lifecycle as a participant. These phases include candidacy, evaluation, certification, and eventual withdrawal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataSupplier</IRI>
+        <Literal xml:lang="en">An sbrn:CoreParticipant responsible for selling or exchanging data within an IDS ecosystem. This participant can combine two roles: the DataOwner, who holds the legitimate rights over the sbrn:Data, and the DataProvider, who supplies the sbrn:Data to others.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5016,8 +5121,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataUsageIntention</IRI>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that characterizes the sbrn:DataCustomer by its intention to use data. This intention drives the agent to perform operations on the data it receives from a sbrn:DataSupplier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DataUsagePolicy</IRI>
-        <Literal>Rules made by the DataOwner that restrics the usage of Data.</Literal>
+        <Literal xml:lang="en">A NormativeDescription from UFO-C, i.e., a description of rules recognized (and often created) by the sbrn:DataSupplier. The policy defines rules, permissions, and restrictions associated with the use of data by others, serving as the main instrument for formalizing and regulating the relation captured by the sbrn:DataUsageRelator. It may also include the specification of the ownership relation (sbrn:DataOwnership) between the sbrn:DataSupplier and the sbrn:Data. Thus, beyond regulating use, this policy establishes the legitimate ownership of the data by the supplier.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5026,8 +5136,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataUsageRelator</IRI>
+        <Literal xml:lang="en">A gufo:Relator founded on a sbrn:DataSovereigntyAct, which mediates the authorized use of data between a sbrn:DataSupplier and a sbrn:DataConsumer. This relator is governed by a sbrn:DataUsagePolicy, which defines the permitted actions over the data. In other words, the policy configures the terms under which the consumer may access, use, or process the data provided by the supplier, establishing the normative foundation for data usage within the IDS ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DigitalAsset</IRI>
-        <Literal>It is a value object offered by a Data Owner in an economic agreement.</Literal>
+        <Literal xml:lang="en">An sbrn:Resource representing a value object offered by a sbrn:DataSupplier as part of an economic agreement. A sbrn:DigitalAsset is composed of sbrn:Data and an associated sbrn:DataUsagePolicy, combining the informational content with the normative rules governing its use. It encapsulates both value and usage conditions in a single exchangeable unit.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5037,7 +5152,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EconomicAgreement</IRI>
-        <Literal>This is an economic aggreement composed by unconditional agreements of Data User and Data Owner.</Literal>
+        <Literal xml:lang="en">A gufo:Relator that mediates the relationship between an sbrn:DataSupplier and an sbrn:DataCustomer through their respective unconditional agreements. This relator composes and sustains the mutual commitments that form the basis of an economic exchange within the IDS ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5047,7 +5162,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EconomicOffering</IRI>
-        <Literal>This is an Economic Offering composed by a Data Owner commitment and Data User claim.</Literal>
+        <Literal xml:lang="en">A gufo:Relator that mediates the relationship between an sbrn:DataSupplier and an sbrn:DataCustomer through their respective conditional agreements. This relator composes and sustains the mutual conditional commitments that characterize the negotiation phase prior to finalizing an economic exchange within the IDS ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5056,8 +5171,18 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EvaluatedParticipant</IRI>
+        <Literal xml:lang="en">A gufo:Phase of the sbrn:DataSpaceParticipantState following an sbrn:EvaluationAct, during which the participant has been formally assessed by an sbrn:EvaluationFacility. The outcome of this process is an sbrn:EvaluationReport, which determines whether the actor meets the criteria to proceed toward certification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EvaluationAct</IRI>
+        <Literal xml:lang="en">A gufo:Event in which an sbrn:EvaluationFacility conducts an evaluation process over an sbrn:Actor. This event marks a transition between two gufo:Phase instances in the Actor&apos;s life cycle: it terminates the Actor&apos;s sbrn:CandidateParticipant phase and initiates its sbrn:EvaluatedParticipant phase.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EvaluationFacility</IRI>
-        <Literal>Agency who elaborates a preliminary report for a component or participant, this is the frist step to be certified.</Literal>
+        <Literal xml:lang="en">An sbrn:IntermediaryParticipant responsible for evaluating sbrn:CoreParticipant and sbrn:BrokerServiceProvider instances and certain sbrn:Resources.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5065,14 +5190,34 @@
         <Literal xml:lang="en">EvaluationFacility</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EvaluationReport</IRI>
+        <Literal xml:lang="en">An sbrn:Resource that serves as evidence of evaluation for a participant or a system component within the IDS ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#EvaluationReport</IRI>
         <Literal xml:lang="en">EvaluationReport</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FormerParticipant</IRI>
+        <Literal xml:lang="en">A gufo:Phase of the sbrn:DataSpaceParticipantState that begins when a participant ceases participation in the IDS ecosystem. This transition is formalized by a sbrn:TerminationAct and signifies the end of the actor’s involvement as a certified participant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IntermediaryParticipant</IRI>
+        <Literal xml:lang="en">An sbrn:Actor that plays intermediary roles essential for the proper functioning of the IDS ecosystem, ensuring key characteristics such as sovereignty and legitimacy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#IntermediaryParticipant</IRI>
         <Literal xml:lang="en">IntermediaryParticipant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Metadata</IRI>
+        <Literal xml:lang="en">An sbrn:Resource used to describe and announce sbrn:Data within the IDS ecosystem. sbrn:Metadata enables the discovery and evaluation of data by other participants, typically serving as the basis for negotiation and exchange.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5081,8 +5226,28 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataAccess</IRI>
+        <Literal xml:lang="en">A gufo:Relator founded on the sbrn:MetadataRetrieval event, mediating the relationship among the sbrn:DataCustomer, the sbrn:BrokerServiceProvider, and the sbrn:Metadata. When the sbrn:DataCustomer retrieves the metadata, these metadata are accessible because they are published (sbrn:publishedOn) via the broker.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataAssignment</IRI>
+        <Literal xml:lang="en">A gufo:Event triggered by a gufo:Mode, specifically a coex:ConditionalCommitment that characterizes the behavior of an sbrn:DataSupplier. For instance, if João (a DataSupplier) intends to sell data to Maria (a DataCustomer), he will do so only if Maria pays him. This describes João’s conditional commitment to sell. Although the sale is conditional, the commitment motivates João (within the IDS context) to publish the sbrn:Metadata of his data to a sbrn:BrokerServiceProvider. Thus, the event of sbrn:MetadataAssignment is a manifestation of this conditional intention.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataDisclosure</IRI>
+        <Literal xml:lang="en">A gufo:Relator founded on the sbrn:MetadataAssignment event, mediating the relationship among the sbrn:DataSupplier, the sbrn:BrokerServiceProvider, and the sbrn:Metadata. Once the sbrn:DataSupplier publishes the metadata, these metadata are, in turn, made accessible (sbrn:publishedOn) through the broker.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetadataRetrieval</IRI>
+        <Literal xml:lang="en">A gufo:Event caused by a gufo:Mode, specifically a coex:ConditionalClaim that characterizes the behavior of an sbrn:DataCustomer. For example, if Maria (a DataCustomer) intends to buy data from João (a DataSupplier), she will only proceed if payment is required and accepted. This describes Maria’s conditional claim to purchase. Although the claim is conditional, it motivates Maria—within the IDS context—to retrieve the sbrn:Metadata of João’s data from the sbrn:BrokerServiceProvider. Therefore, the event of sbrn:MetadataRetrieval is a manifestation of this conditional intention.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Offer</IRI>
-        <Literal>This is an even to descibe an offer, the first part of an economic exchange. In this case, it will be an offer of data.</Literal>
+        <Literal xml:lang="en">A gufo:Event that represents an offer, specifically the initiating act in a coex:EconomicExchange. In this context, it refers to an offer of data made by a participant (e.g., a sbrn:DataSupplier). This event establishes the first step in a negotiation or exchange process.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5097,7 +5262,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OfferedContribution</IRI>
-        <Literal>This is the same as CounterpartContribution event, but it is for the offeror. This represents and event of some contribution being offered.</Literal>
+        <Literal xml:lang="en">A gufo:Event representing the act of offering a contribution as part of an economic or data exchange. coex:OfferedContribution is an instantiation of coex:OfferContributionType events, specifically describing the contribution made by the offeror during the initial stage of a negotiation or exchange. It captures the proactive intent to provide something of value, such as data, in return for a counterpart.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5112,7 +5277,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OfferedContributionType</IRI>
-        <Literal>This is a type that can instantiate OfferedContribution events</Literal>
+        <Literal xml:lang="en">A gufo:ConcreteIndividualType which instantiate OfferedContribution events.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5122,7 +5287,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OffereeUnconditionalAgreement</IRI>
-        <Literal>Unconditional agreement made by the Data User.</Literal>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that characterizes the sbrn:DataSupplier at the moment of sealing an economic agreement. It represents the supplier’s unconditional intention to deliver one or more sbrn:DigitalAssets—comprising both data and its associated usage policy. This mode arises once prior conditions (as expressed in a coex:ConditionalCommitment) have been satisfied and the agreement is finalized. It is mutually dependent on the coex:OffereeUnconditionalAgreement, as the supplier’s commitment only becomes effective when the customer also agrees to provide a valid sbrn:Counterpart.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5132,7 +5297,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OfferorUnconditionalAgreement</IRI>
-        <Literal>Unconditional Agreement made by the Data Owner.</Literal>
+        <Literal xml:lang="en">A gufo:IntrinsicMode that characterizes the sbrn:DataCustomer when entering into an economic agreement. It reflects the customer’s unconditional intention to provide a sbrn:Counterpart (e.g., payment, service, or data) in exchange for the agreed sbrn:DigitalAsset. This mode is the final stage of the customer&apos;s commitment, transitioning from a coex:ConditionalClaim. It is mutually dependent on the coex:OfferorUnconditionalAgreement, as the customer’s agreement is only valid when there is a corresponding offer of value from the supplier.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -5142,12 +5307,17 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Resource</IRI>
-        <Literal>It can be any resource being manipulated in an IDS ecosystem</Literal>
+        <Literal xml:lang="en">A gufo:FunctionalComplex representing any object manipulated within the IDS ecosystem, where it has its significance in one or more processes.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Resource</IRI>
         <Literal xml:lang="en">Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TerminationAct</IRI>
+        <Literal xml:lang="en">A gufo:Event in which an sbrn:Actor either decides to leave the IDS ecosystem or ceases to be part of it due to the invalidation of its certification. This event marks a transition between two gufo:Phase instances in the actor’s life cycle: it terminates the sbrn:CertificatedParticipant phase and initiates the sbrn:FormerParticipant phase.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
